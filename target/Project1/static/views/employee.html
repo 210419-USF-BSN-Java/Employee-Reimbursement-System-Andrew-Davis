@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee</title>
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+        crossorigin="anonymous"/>
+
+        <!-- Site wide styles -->
+        <link rel="stylesheet" href="static/styles/style_all.css">
+
+        <!-- Page specific styles -->
+
+        <!-- Site wide scripts -->
+        <script src="static/scripts/script_all.js" defer></script>
+        <script src="static/scripts/jquery_all.js" defer></script>
+        
+        <!-- Page specific scripts -->
+
+    </head>
+    <body>
+        <!-- Height: 150px = 110px + 2.5rem -->
+        <div>
+            <div class="div-logo">
+                <div>
+                    <a href="#">
+                        <img class="img-logo" src="static/images/revature-logo-smaller.png" alt="Image not available">
+                    </a>
+                </div>
+            </div>
+    
+            <div class="div-titlebar">
+                <div class="div-title">
+                    Employee
+                </div>
+                <div class="div-button-options">
+                    <i class="fas fa-bars fa-2x"></i>
+                </div>
+            </div>
+        </div>
+        <!--/ Height: 150px = 110px + 2.5rem -->
+        <div class="div-options">
+            <h1>Requests</h1>
+            <p>Submit New</p>
+            <p>View Pending</p>
+            <p>View Resolved</p>
+            <p>Upload Receipt</p>
+
+            <h1>Info</h1>
+            <p>View</p>
+            <p>Update</p>
+            <p>Logout</p>
+        </div>
+
+
+
+
+        <div class="div-body">
+            
+            <form action="/Project1/reimbursement" method="POST">
+                <label>Role:</label>
+                <input type="text" name="user_role">
+                <br>
+                <br>
+                <input type="submit" value="submit">
+            </form>
+            
+            
+            
+            <div class="div-body">
+                <a href="/Project1/">Home</a>
+                <br>
+                <a href="/Project1/employee">Employee</a>
+                <br>
+                <a href="/Project1/manager">Manager</a>
+            </div>
+        </div>
+
+
+
+
+        </script>
+    </body>
+</html>
