@@ -14,9 +14,11 @@ public class FrontController extends DefaultServlet {
 	RequestHelper rh = new RequestHelper();
 	
 	protected void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		
+
+		// /Project1/reimbursement
 		String path = request.getRequestURI().substring(request.getContextPath().length());
 		
+		// /reimbursement
 		if(path.startsWith("/static/") || path.equals("/") || path.equals("/index.html") ) {
 			super.doGet(request, response);
 		} else {

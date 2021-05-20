@@ -17,7 +17,10 @@ public class RequestHelper {
 	ReimbDelegate rd = new ReimbDelegate();
 
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		// /Project1/reimbursement
 		StringBuilder uriString = new StringBuilder(request.getRequestURI());
+		
+		// /reimbursement
 		uriString.replace(0, request.getContextPath().length() + 1, "");
 		
 		if(uriString.indexOf("/") != -1) {
@@ -26,12 +29,16 @@ public class RequestHelper {
 			// ... because it is saved in SERVLET CONTEXT SCOPE / APPLICATION SCOPE ...
 			// ... and not in the other SERVLET CONFIG SCOPE / SERVLET SCOPE
 			request.setAttribute("path", uriString.substring(uriString.indexOf("/") + 1));
-			// path = 1, planets has been removed
 			
 			uriString.replace(uriString.indexOf("/"), uriString.length(), "");
 			// at this point, uriString = planets
 		}
 		
+		// employee
+		
+		// manager
+		
+		// reimbursement
 		switch (uriString.toString()) {
 		case "employee":
 			ed.process(request, response);

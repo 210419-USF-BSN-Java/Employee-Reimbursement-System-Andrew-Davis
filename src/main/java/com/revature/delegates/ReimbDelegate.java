@@ -64,13 +64,15 @@ public class ReimbDelegate implements Delegatable {
 //					request.getRequestDispatcher("/").forward(request, response);
 					
 					
+					// Instead of adding a reimbursement which has a ton of fields i just called add on role because it is simpler...
+					// .. for this test
 					String role = request.getParameter("user_role");
 					Role r = new Role(role);
 					rop.add(r);
 					
 //					response.setStatus(201);
 					
-					response.sendRedirect("/Project1/");
+					response.sendRedirect("/Project1/employee");
 					
 					break;
 				case "DELETE":
