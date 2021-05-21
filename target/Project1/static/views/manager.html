@@ -20,6 +20,7 @@
         <script src="static/scripts/script_all.js" defer></script>
         
         <!-- Page specific scripts -->
+        <script src="static/scripts/script_manager.js" defer></script>
 
     </head>
     <body>
@@ -45,12 +46,13 @@
         <!--/ Height: 150px = 110px + 2.5rem -->
         <div class="div-options">
             <h1>Requests</h1>
-            <p>View Pending</p>
-            <p>View Resolved</p>
+            <p class="p-man-view-pending">View Pending</p>
+            <p class="p-man-view-resolved">View Resolved</p>
 
             <h1>Info</h1>
-            <p>View All Employees</p>
-            <p>Logout</p>
+            <p class="p-man-viewone-employee">View Employee</p>
+            <p class="p-man-viewall-employees">View All Employees</p>
+            <p class="p-man-logout">Logout</p>
         </div>
 
 
@@ -58,23 +60,189 @@
 
 
         <div class="div-body">
+
+
+
+            <div>
+                <p class="p-title">Pending</p>
+            </div>
+    
+            <div class="div-body-view-pending">Pending
+
+            </div>
+            <div class="div-body-view-resolved">Resolved
+
+            </div>
+            <div class="div-body-viewone-employee">View All From One
+
+            </div>
+            <div class="div-body-viewall-employees">View All
+                
+            </div>
             
             
             
             
             
-            <div class="div-body">
+            <!-- <div class="div-body">
                 <a href="/Project1/">Home</a>
                 <br>
                 <a href="/Project1/employee">Employee</a>
                 <br>
                 <a href="/Project1/manager">Manager</a>
-            </div>
+            </div> -->
         </div>
 
 
         
 
+        <style>
+            .div-button-options {
+                grid-row: 1;
+                grid-column: 3;
 
+                justify-self: center;
+                align-self: center;
+
+                cursor: pointer;
+            }
+            .fa-bars {
+                color: #fff;
+            }
+            .div-options {
+                background-color: #9b9b9b;
+                width: 250px;
+                position: absolute;
+                z-index: 3;
+
+                right: -250px;
+
+                overflow-y: scroll;
+            }
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            .div-options::-webkit-scrollbar {
+                display: none;
+            }
+            /* Hide scrollbar for IE, Edge and Firefox */
+            .div-options {
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
+            }
+            .div-options h1 {
+                font-family: "futura-pt", arial;
+                font-size: 18px;
+                /* color: #ff7d3b!important; */
+                color: #2e2e2e!important;
+
+                margin-top: 40px;
+                text-align: center;
+
+                cursor: default;
+            }
+            .div-options p {
+                font-family: "futura-pt", arial;
+                font-size: 14px;
+                color: #fff!important;
+
+                text-align: center;
+
+                cursor: pointer;
+            }
+            .div-options p:hover {
+                opacity: 0.5;
+            }
+            .div-body {
+                background-color: #cccaca;
+
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr 5fr 1fr;
+
+                z-index: 0;
+            }
+            .p-title {
+                grid-row: 1;
+                grid-column: 1;
+
+                margin-top: 40px;
+                text-align: center;
+            }
+            [class^="div-body-"] {
+                grid-row: 1;
+                grid-column: 2;
+
+                width: 100%;
+
+                overflow-y: scroll;
+
+                border-left: 2px solid #fff;
+                border-right: 2px solid #fff;
+
+                z-index: 1;
+
+                background-color: #cccaca;
+            }
+            [class^="div-body-"]::-webkit-scrollbar {
+                display: none;
+            }
+            /* Hide scrollbar for IE, Edge and Firefox */
+            [class^="div-body-"] {
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
+            }
+        </style>
+
+        <!-- <script>
+            var divViewPendingOptions = document.querySelector(".p-man-view-pending")
+            var divViewResolvedOptions = document.querySelector(".p-man-view-resolved")
+            var divViewOneEmplOptions = document.querySelector(".p-man-viewone-employee")
+            var divViewAllEmplOptions = document.querySelector(".p-man-viewall-employees")
+            var divLogout = document.querySelector(".p-man-logout")
+            var pTitle = document.querySelector("p-title")
+
+
+
+            var divViewPending = document.querySelector(".div-body-view-pending")
+            var divViewResolved = document.querySelector(".div-body-view-resolved")
+            var divViewOneEmpl = document.querySelector(".div-body-viewone-employee")
+            var divViewAllEmpl = document.querySelector(".div-body-viewall-employees")
+
+
+            // Havd this one on top when the page loads
+            divViewPending.style.zIndex = "2"
+            divViewPendingOptions.addEventListener("click", ()=>{
+                divViewPending.style.zIndex = "2"
+                divViewResolved.style.zIndex = "1"
+                divViewOneEmpl.style.zIndex = "1"
+                divViewAllEmpl.style.zIndex = "1"
+
+                pTitle.innerHTML = "Pending"
+            })
+            divViewResolvedOptions.addEventListener("click", ()=>{
+                divViewPending.style.zIndex = "1"
+                divViewResolved.style.zIndex = "2"
+                divViewOneEmpl.style.zIndex = "1"
+                divViewAllEmpl.style.zIndex = "1"
+
+                pTitle.innerHTML = "Resolved"
+            })
+            divViewOneEmplOptions.addEventListener("click", ()=>{
+                divViewPending.style.zIndex = "1"
+                divViewResolved.style.zIndex = "1"
+                divViewOneEmpl.style.zIndex = "2"
+                divViewAllEmpl.style.zIndex = "1"
+
+                pTitle.innerHTML = "Employee"
+            })
+            divViewAllEmplOptions.addEventListener("click", ()=>{
+                divViewPending.style.zIndex = "1"
+                divViewResolved.style.zIndex = "1"
+                divViewOneEmpl.style.zIndex = "1"
+                divViewAllEmpl.style.zIndex = "2"
+
+                pTitle.innerHTML = "View All"
+            })
+
+        </script> -->
     </body>
 </html>

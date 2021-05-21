@@ -79,7 +79,6 @@ public class ReimbDelegate implements Delegatable {
 					// logic
 					break;
 				default:
-					// logic
 			}
 		} else {
 			// further processing
