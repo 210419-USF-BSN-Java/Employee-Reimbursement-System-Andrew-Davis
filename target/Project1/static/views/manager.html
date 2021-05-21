@@ -63,8 +63,8 @@
 
 
 
-            <div>
-                <p class="p-title">Pending</p>
+            <div class="div-p-title">
+                <h1 class="h1-title">Pending</h1>
             </div>
     
             <div class="div-body-view-pending">Pending
@@ -73,10 +73,10 @@
             <div class="div-body-view-resolved">Resolved
 
             </div>
-            <div class="div-body-viewone-employee">View All From One
+            <div class="div-body-viewone-employee">Employee
 
             </div>
-            <div class="div-body-viewall-employees">View All
+            <div class="div-body-viewall-employees">Employees
                 
             </div>
             
@@ -97,6 +97,63 @@
         
 
         <style>
+            body {
+                padding: 0px;
+                margin: 0px;
+
+                overflow-x: hidden;
+            }
+
+
+
+            .div-logo {
+                display: grid;
+                grid-template-rows: 110px;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .div-logo div {
+                grid-row: 1;
+                grid-column: 2;
+            }
+            .div-logo div a {
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr;
+            }
+            .img-logo {
+                grid-row: 1;
+                grid-column: 1;
+
+                height: 100%;
+                max-width: auto;
+
+                justify-self: center;
+                align-self: center;
+
+                cursor: pointer;
+            }
+
+            .div-titlebar {
+                background-color: #474c55;
+
+                display: grid;
+                grid-template-rows: 2.5rem;
+                grid-template-columns: 1fr 3fr 1fr;
+
+                cursor: default;
+            }
+            .div-title {
+                font-family: "futura-pt", arial;
+                font-size: 22px;
+                /* color: #ff7d3b!important; */
+                color: #fff!important;
+
+                grid-row: 1;
+                grid-column: 1;
+
+                justify-self: center;
+                align-self: center;
+            }
             .div-button-options {
                 grid-row: 1;
                 grid-column: 3;
@@ -151,6 +208,9 @@
             .div-options p:hover {
                 opacity: 0.5;
             }
+
+
+
             .div-body {
                 background-color: #cccaca;
 
@@ -160,12 +220,18 @@
 
                 z-index: 0;
             }
-            .p-title {
+            .div-p-title {
                 grid-row: 1;
                 grid-column: 1;
-
+            }
+            .h1-title {
                 margin-top: 40px;
                 text-align: center;
+
+                font-family: "futura-pt", arial;
+                font-size: 18px;
+                /* color: #ff7d3b!important; */
+                color: #2e2e2e!important;
             }
             [class^="div-body-"] {
                 grid-row: 1;

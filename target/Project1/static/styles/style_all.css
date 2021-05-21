@@ -121,12 +121,18 @@ body {
 
     z-index: 0;
 }
-.p-title {
+.div-p-title {
     grid-row: 1;
     grid-column: 1;
-
+}
+.h1-title {
     margin-top: 40px;
     text-align: center;
+
+    font-family: "futura-pt", arial;
+    font-size: 18px;
+    /* color: #ff7d3b!important; */
+    color: #2e2e2e!important;
 }
 [class^="div-body-"] {
     grid-row: 1;

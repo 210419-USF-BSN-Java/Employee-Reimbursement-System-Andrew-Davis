@@ -3,7 +3,7 @@ var divViewResolvedOptions = document.querySelector(".p-man-view-resolved")
 var divViewOneEmplOptions = document.querySelector(".p-man-viewone-employee")
 var divViewAllEmplOptions = document.querySelector(".p-man-viewall-employees")
 var divLogout = document.querySelector(".p-man-logout")
-var pTitle = document.querySelector(".p-title")
+var pTitle = document.querySelector(".h1-title")
 
 
 
@@ -46,5 +46,5 @@ divViewAllEmplOptions.addEventListener("click", ()=>{
     divViewOneEmpl.style.zIndex = "1"
     divViewAllEmpl.style.zIndex = "2"
 
-    pTitle.innerHTML = "View All"
+    pTitle.innerHTML = "Employees"
 })

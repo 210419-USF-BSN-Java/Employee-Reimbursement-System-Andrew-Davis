@@ -62,8 +62,8 @@
 
         <div class="div-body">
 
-            <div>
-                <p class="p-title">Submit</p>
+            <div class="div-p-title">
+                <h1 class="h1-title">Submit</h1>
             </div>
 
             <div class="div-body-submit">Submit
@@ -75,7 +75,7 @@
             <div class="div-body-view-resolved">Resolved
 
             </div>
-            <div class="div-body-upload-receipt">Receipt
+            <div class="div-body-upload-receipt">Upload
 
             </div>
             <div class="div-body-view-info">View Info
@@ -119,6 +119,120 @@
 
 
         <style>
+            body {
+                padding: 0px;
+                margin: 0px;
+
+                overflow-x: hidden;
+            }
+
+
+
+            .div-logo {
+                display: grid;
+                grid-template-rows: 110px;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .div-logo div {
+                grid-row: 1;
+                grid-column: 2;
+            }
+            .div-logo div a {
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr;
+            }
+            .img-logo {
+                grid-row: 1;
+                grid-column: 1;
+
+                height: 100%;
+                max-width: auto;
+
+                justify-self: center;
+                align-self: center;
+
+                cursor: pointer;
+            }
+
+            .div-titlebar {
+                background-color: #474c55;
+
+                display: grid;
+                grid-template-rows: 2.5rem;
+                grid-template-columns: 1fr 3fr 1fr;
+
+                cursor: default;
+            }
+            .div-title {
+                font-family: "futura-pt", arial;
+                font-size: 22px;
+                /* color: #ff7d3b!important; */
+                color: #fff!important;
+
+                grid-row: 1;
+                grid-column: 1;
+
+                justify-self: center;
+                align-self: center;
+            }
+            .div-button-options {
+                grid-row: 1;
+                grid-column: 3;
+
+                justify-self: center;
+                align-self: center;
+
+                cursor: pointer;
+            }
+            .fa-bars {
+                color: #fff;
+            }
+            .div-options {
+                background-color: #9b9b9b;
+                width: 250px;
+                position: absolute;
+                z-index: 3;
+
+                right: -250px;
+
+                overflow-y: scroll;
+            }
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            .div-options::-webkit-scrollbar {
+                display: none;
+            }
+            /* Hide scrollbar for IE, Edge and Firefox */
+            .div-options {
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
+            }
+            .div-options h1 {
+                font-family: "futura-pt", arial;
+                font-size: 18px;
+                /* color: #ff7d3b!important; */
+                color: #2e2e2e!important;
+
+                margin-top: 40px;
+                text-align: center;
+
+                cursor: default;
+            }
+            .div-options p {
+                font-family: "futura-pt", arial;
+                font-size: 14px;
+                color: #fff!important;
+
+                text-align: center;
+
+                cursor: pointer;
+            }
+            .div-options p:hover {
+                opacity: 0.5;
+            }
+
+
+
             .div-body {
                 background-color: #cccaca;
 
@@ -128,12 +242,18 @@
 
                 z-index: 0;
             }
-            .p-title {
+            .div-p-title {
                 grid-row: 1;
                 grid-column: 1;
-
+            }
+            .h1-title {
                 margin-top: 40px;
                 text-align: center;
+
+                font-family: "futura-pt", arial;
+                font-size: 18px;
+                /* color: #ff7d3b!important; */
+                color: #2e2e2e!important;
             }
             [class^="div-body-"] {
                 grid-row: 1;
@@ -157,25 +277,6 @@
             [class^="div-body-"] {
                 -ms-overflow-style: none;  /* IE and Edge */
                 scrollbar-width: none;  /* Firefox */
-            }
-            .div-button-options {
-                grid-row: 1;
-                grid-column: 3;
-
-                justify-self: center;
-                align-self: center;
-
-                cursor: pointer;
-            }
-            .div-options {
-                background-color: #9b9b9b;
-                width: 250px;
-                position: absolute;
-                z-index: 3;
-
-                right: -250px;
-
-                overflow-y: scroll;
             }
         </style>
     </body>

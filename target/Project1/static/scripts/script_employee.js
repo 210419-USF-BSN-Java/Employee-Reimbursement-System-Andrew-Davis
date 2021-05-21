@@ -5,7 +5,7 @@ var divUploadReceiptOptions = document.querySelector(".p-emp-upload-receipt")
 var divViewInfoOptions = document.querySelector(".p-emp-view-info")
 var divUpdateInfoOptions = document.querySelector(".p-emp-update-info")
 var divLogout = document.querySelector(".p-emp-logout")
-var pTitle = document.querySelector(".p-title")
+var pTitle = document.querySelector(".h1-title")
 
 
 

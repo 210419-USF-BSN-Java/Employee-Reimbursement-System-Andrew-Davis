@@ -8,6 +8,23 @@ var divUpdateInfo = document.querySelector(".div-body-update-info")
 
 
 
+// Code for manipulating the options menu
+var divOptions = document.querySelector(".div-options")
+var divOptionsBtn = document.querySelector(".div-button-options")
+
+var optionState = false
+divOptionsBtn.addEventListener("click", ()=>{
+    if(!optionState) {
+        divOptions.style.right = "0px"
+        optionState = true
+    } else {
+        divOptions.style.right = "-250px"
+        optionState = false
+    }
+})
+
+
+
 var windowHeight = window.innerHeight
 var bodyHeight = windowHeight - 150
 
@@ -35,23 +52,4 @@ window.addEventListener("resize", ()=>{
     divBody.style.height = bodyHeight + "px"
 
     divOptions.style.height = bodyHeight + "px"
-})
-
-
-
-
-
-// Code for manipulating the options menu
-var divOptions = document.querySelector(".div-options")
-var divOptionsBtn = document.querySelector(".div-button-options")
-
-var optionState = false
-divOptionsBtn.addEventListener("click", ()=>{
-    if(!optionState) {
-        divOptions.style.right = "0px"
-        optionState = true
-    } else {
-        divOptions.style.right = "-250px"
-        optionState = false
-    }
 })
