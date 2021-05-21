@@ -5,7 +5,8 @@ var divUploadReceiptOptions = document.querySelector(".p-emp-upload-receipt")
 var divViewInfoOptions = document.querySelector(".p-emp-view-info")
 var divUpdateInfoOptions = document.querySelector(".p-emp-update-info")
 var divLogout = document.querySelector(".p-emp-logout")
-var pTitle = document.querySelector("p-title")
+var pTitle = document.querySelector(".p-title")
+
 
 
 var divSubmit = document.querySelector(".div-body-submit")
@@ -16,8 +17,9 @@ var divViewInfo = document.querySelector(".div-body-view-info")
 var divUpdateInfo = document.querySelector(".div-body-update-info")
 
 
+
 // Havd this one on top when the page loads
-// divSubmit.style.zIndex = "2"
+divSubmit.style.zIndex = "2"
 divSubmitOptions.addEventListener("click", ()=>{
     divSubmit.style.zIndex = "2"
     divViewPending.style.zIndex = "1"
@@ -26,7 +28,7 @@ divSubmitOptions.addEventListener("click", ()=>{
     divViewInfo.style.zIndex = "1"
     divUpdateInfo.style.zIndex = "1"
 
-    // pTitle.innerHTML = "Submit"
+    pTitle.innerHTML = "Submit"
 })
 divViewPendingOptions.addEventListener("click", ()=>{
     divSubmit.style.zIndex = "1"
@@ -36,7 +38,7 @@ divViewPendingOptions.addEventListener("click", ()=>{
     divViewInfo.style.zIndex = "1"
     divUpdateInfo.style.zIndex = "1"
 
-    // pTitle.innerHTML = "Pending"
+    pTitle.innerHTML = "Pending"
 })
 divViewResolvedOptions.addEventListener("click", ()=>{
     divSubmit.style.zIndex = "1"
@@ -46,7 +48,7 @@ divViewResolvedOptions.addEventListener("click", ()=>{
     divViewInfo.style.zIndex = "1"
     divUpdateInfo.style.zIndex = "1"
 
-    // pTitle.innerHTML = "Resolved"
+    pTitle.innerHTML = "Resolved"
 })
 divUploadReceiptOptions.addEventListener("click", ()=>{
     divSubmit.style.zIndex = "1"
@@ -56,7 +58,7 @@ divUploadReceiptOptions.addEventListener("click", ()=>{
     divViewInfo.style.zIndex = "1"
     divUpdateInfo.style.zIndex = "1"
 
-    // pTitle.innerHTML = "Upload"
+    pTitle.innerHTML = "Upload"
 })
 divViewInfoOptions.addEventListener("click", ()=>{
     divSubmit.style.zIndex = "1"
@@ -66,7 +68,7 @@ divViewInfoOptions.addEventListener("click", ()=>{
     divViewInfo.style.zIndex = "2"
     divUpdateInfo.style.zIndex = "1"
 
-    // pTitle.innerHTML = "View Info"
+    pTitle.innerHTML = "View Info"
 })
 divUpdateInfoOptions.addEventListener("click", ()=>{
     divSubmit.style.zIndex = "1"
@@ -76,5 +78,5 @@ divUpdateInfoOptions.addEventListener("click", ()=>{
     divViewInfo.style.zIndex = "1"
     divUpdateInfo.style.zIndex = "2"
 
-    // pTitle.innerHTML = "Update Info"
+    pTitle.innerHTML = "Update Info"
 })

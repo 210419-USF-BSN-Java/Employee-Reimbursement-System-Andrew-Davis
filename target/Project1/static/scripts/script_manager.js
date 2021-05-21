@@ -3,7 +3,7 @@ var divViewResolvedOptions = document.querySelector(".p-man-view-resolved")
 var divViewOneEmplOptions = document.querySelector(".p-man-viewone-employee")
 var divViewAllEmplOptions = document.querySelector(".p-man-viewall-employees")
 var divLogout = document.querySelector(".p-man-logout")
-var pTitle = document.querySelector("p-title")
+var pTitle = document.querySelector(".p-title")
 
 
 
@@ -13,8 +13,9 @@ var divViewOneEmpl = document.querySelector(".div-body-viewone-employee")
 var divViewAllEmpl = document.querySelector(".div-body-viewall-employees")
 
 
+
 // Havd this one on top when the page loads
-// divViewPending.style.zIndex = "2"
+divViewPending.style.zIndex = "2"
 divViewPendingOptions.addEventListener("click", ()=>{
     divViewPending.style.zIndex = "2"
     divViewResolved.style.zIndex = "1"

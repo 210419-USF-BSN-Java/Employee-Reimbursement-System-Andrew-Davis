@@ -5,7 +5,8 @@ var divUploadReceiptOptions = document.querySelector(".p-emp-upload-receipt")
 var divViewInfoOptions = document.querySelector(".p-emp-view-info")
 var divUpdateInfoOptions = document.querySelector(".p-emp-update-info")
 var divLogout = document.querySelector(".p-emp-logout")
-var pTitle = document.querySelector("p-title")
+var pTitle = document.querySelector(".p-title")
+
 
 
 var divSubmit = document.querySelector(".div-body-submit")
@@ -16,8 +17,9 @@ var divViewInfo = document.querySelector(".div-body-view-info")
 var divUpdateInfo = document.querySelector(".div-body-update-info")
 
 
+
 // Havd this one on top when the page loads
-// divSubmit.style.zIndex = "2"
+divSubmit.style.zIndex = "2"
 divSubmitOptions.addEventListener("click", ()=>{
     divSubmit.style.zIndex = "2"
     divViewPending.style.zIndex = "1"

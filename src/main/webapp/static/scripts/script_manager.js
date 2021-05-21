@@ -3,7 +3,7 @@ var divViewResolvedOptions = document.querySelector(".p-man-view-resolved")
 var divViewOneEmplOptions = document.querySelector(".p-man-viewone-employee")
 var divViewAllEmplOptions = document.querySelector(".p-man-viewall-employees")
 var divLogout = document.querySelector(".p-man-logout")
-var pTitle = document.querySelector("p-title")
+var pTitle = document.querySelector(".p-title")
 
 
 
@@ -13,15 +13,16 @@ var divViewOneEmpl = document.querySelector(".div-body-viewone-employee")
 var divViewAllEmpl = document.querySelector(".div-body-viewall-employees")
 
 
+
 // Havd this one on top when the page loads
-// divViewPending.style.zIndex = "2"
+divViewPending.style.zIndex = "2"
 divViewPendingOptions.addEventListener("click", ()=>{
     divViewPending.style.zIndex = "2"
     divViewResolved.style.zIndex = "1"
     divViewOneEmpl.style.zIndex = "1"
     divViewAllEmpl.style.zIndex = "1"
 
-    // pTitle.innerHTML = "Pending"
+    pTitle.innerHTML = "Pending"
 })
 divViewResolvedOptions.addEventListener("click", ()=>{
     divViewPending.style.zIndex = "1"
@@ -29,7 +30,7 @@ divViewResolvedOptions.addEventListener("click", ()=>{
     divViewOneEmpl.style.zIndex = "1"
     divViewAllEmpl.style.zIndex = "1"
 
-    // pTitle.innerHTML = "Resolved"
+    pTitle.innerHTML = "Resolved"
 })
 divViewOneEmplOptions.addEventListener("click", ()=>{
     divViewPending.style.zIndex = "1"
@@ -37,7 +38,7 @@ divViewOneEmplOptions.addEventListener("click", ()=>{
     divViewOneEmpl.style.zIndex = "2"
     divViewAllEmpl.style.zIndex = "1"
 
-    // pTitle.innerHTML = "Employee"
+    pTitle.innerHTML = "Employee"
 })
 divViewAllEmplOptions.addEventListener("click", ()=>{
     divViewPending.style.zIndex = "1"
@@ -45,5 +46,5 @@ divViewAllEmplOptions.addEventListener("click", ()=>{
     divViewOneEmpl.style.zIndex = "1"
     divViewAllEmpl.style.zIndex = "2"
 
-    // pTitle.innerHTML = "View All"
+    pTitle.innerHTML = "View All"
 })
