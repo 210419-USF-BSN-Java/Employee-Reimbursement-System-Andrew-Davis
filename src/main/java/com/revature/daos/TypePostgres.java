@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.revature.models.Role;
 import com.revature.models.Type;
 import com.revature.utils.DBConnection;
 

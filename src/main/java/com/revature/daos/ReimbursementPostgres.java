@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import com.revature.models.Reimbursement;
-import com.revature.models.User;
 import com.revature.utils.DBConnection;
 
 public class ReimbursementPostgres implements ReimbursementDao {

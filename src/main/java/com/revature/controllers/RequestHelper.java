@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.revature.delegates.EmployeeDelegate;
+import com.revature.delegates.LoginDelegate;
 import com.revature.delegates.ManagerDelegate;
 import com.revature.delegates.ReimbDelegate;
 
@@ -15,7 +16,8 @@ public class RequestHelper {
 	EmployeeDelegate ed = new EmployeeDelegate();
 	ManagerDelegate md = new ManagerDelegate();
 	ReimbDelegate rd = new ReimbDelegate();
-
+	LoginDelegate ld = new LoginDelegate();
+	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		// /Project1/reimbursement
 		StringBuilder uriString = new StringBuilder(request.getRequestURI());
@@ -40,6 +42,9 @@ public class RequestHelper {
 		
 		// reimbursement
 		switch (uriString.toString()) {
+		case "login":
+			ld.process(request, response);
+			break;
 		case "employee":
 			ed.process(request, response);
 			break;

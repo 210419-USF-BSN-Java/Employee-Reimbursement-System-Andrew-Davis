@@ -39,6 +39,31 @@ public class ManagerPostgres implements ManagerDao {
 	}
 	
 	@Override
+	public User getByUsernameAndPassword(String username, String password) {
+		String sql = "SELECT * FROM ers_users WHERE ers_username = ? AND ers_password = ?";
+
+		User u = new User();
+		try(Connection conn = DBConnection.getConnectionFromFile()){
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, username);
+			ps.setString(1, password);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+	        	u.setErs_user_id(rs.getInt("ers_user_id"));
+	        	u.setErs_username(rs.getString("ers_username"));
+	        	u.setErs_password(rs.getString("ers_password"));
+	        	u.setUser_first_name(rs.getString("user_first_name"));
+	        	u.setUser_last_name(rs.getString("user_last_name"));
+	        	u.setUser_email(rs.getString("user_email"));
+	        	u.setUser_role_id(rs.getInt("user_role_id"));
+	        }
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+		return u;
+	}
+	
+	@Override
 	public ArrayList<User> getAll() {
 		String sql = "SELECT * FROM ers_users WHERE user_role_id = 2";
 		

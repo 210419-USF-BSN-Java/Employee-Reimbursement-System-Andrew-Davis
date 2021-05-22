@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="static/styles/style_all.css">
 
         <!-- Page specific styles -->
+        <script src="static/scripts/script_login.js" defer></script>
 
         <!-- Site wide scripts -->
         <script src="static/scripts/script_all.js" defer></script>
@@ -19,13 +20,32 @@
     </head>
     <body>
         
-        <form action="/Project1/login" method="GET">
+        <div>
             <label for="">Username</label><br>
-            <input type="text" name="username"><br><br>
+            <input type="text" class="username"><br><br>
             <label for="">Password</label><br>
-            <input type="text" name="password"><br><br>
+            <input type="text" class="password"><br><br>
 
-            <input type="submit">
-        </form>
+            <input class="input-login" type="button" value="Login">
+        </div>
+        <div id="message" style=" margin: auto; width: 50%;color:red" > </span>
+        
+
+
+
+        <!-- <div class="div-body">
+            <a href="/Project1/">Home</a>
+            <br>
+            <a href="/Project1/employee">Employee</a>
+            <br>
+            <a href="/Project1/manager">Manager</a>
+        </div> -->
+        <br>
+        <br>
+        <a href="/Project1/">Home</a>
+        <br>
+        <a href="/Project1/employee">Employee</a>
+        <br>
+        <a href="/Project1/manager">Manager</a>
     </body>
 </html>

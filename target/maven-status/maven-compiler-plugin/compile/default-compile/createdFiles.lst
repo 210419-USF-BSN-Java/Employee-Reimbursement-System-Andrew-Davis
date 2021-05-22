@@ -24,5 +24,6 @@ com\revature\daos\TypePostgres.class
 com\revature\daos\EmployeeDao.class
 com\revature\daos\EmployeePostgres.class
 com\revature\daos\ManagerPostgres.class
+com\revature\delegates\LoginDelegate.class
 com\revature\daos\ReimbursementDao.class
 com\revature\delegates\EmployeeDelegate.class
