@@ -48,3 +48,12 @@ divViewAllEmplOptions.addEventListener("click", ()=>{
 
     pTitle.innerHTML = "Employees"
 })
+
+
+
+// logout functionality
+divLogout.addEventListener("click", ()=>{
+    sessionStorage.removeItem('token');
+    
+    window.location.href="http://localhost:8080/Project1/"
+})

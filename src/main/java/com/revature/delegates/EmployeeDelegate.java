@@ -27,20 +27,13 @@ public class EmployeeDelegate implements Delegatable {
 		if (path == null || path.equals("")) {
 			switch(request.getMethod()) {
 				case "GET":
-					// logic
-					
-					///* serve page
 					request.getRequestDispatcher("static/views/employee.html").forward(request, response);
-					//*/
-					
 					break;
 				case "PUT":
 					// logic
 					break;
 				case "POST":
 					// logic
-					
-					
 					break;
 				case "DELETE":
 					// logic

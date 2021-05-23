@@ -27,18 +27,7 @@ public class ManagerDelegate implements Delegatable {
 		if (path == null || path.equals("")) {
 			switch(request.getMethod()) {
 				case "GET":
-					// logic
-					
-					/*
-					User u = mp.getById(1);
-					PrintWriter pm = response.getWriter();
-					pm.write(om.writeValueAsString(u));
-					*/
-					
-					///* serve page
 					request.getRequestDispatcher("static/views/manager.html").forward(request, response);
-					//*/
-					
 					break;
 				case "PUT":
 					// logic

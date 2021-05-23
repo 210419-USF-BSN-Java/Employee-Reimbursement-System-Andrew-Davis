@@ -2,7 +2,7 @@ package com.revature.services;
 
 import java.util.ArrayList;
 
-import com.revature.daos.ManagerPostgres;
+import com.revature.daos.UserPostgres;
 import com.revature.daos.ReimbursementPostgres;
 import com.revature.daos.RolePostgres;
 import com.revature.daos.StatusPostgres;
@@ -12,7 +12,7 @@ import com.revature.models.User;
 
 public class ManagerServiceImplementation implements ManagerService {
 	
-	private ManagerPostgres ep = new ManagerPostgres();
+	private UserPostgres up = new UserPostgres();
 	private ReimbursementPostgres rep = new ReimbursementPostgres();
 	
 	private RolePostgres rop = new RolePostgres();

@@ -18,6 +18,7 @@ var divUpdateInfo = document.querySelector(".div-body-update-info")
 
 
 
+// zIndex functionality
 // Have this one on top when the page loads
 divSubmit.style.zIndex = "2"
 divSubmitOptions.addEventListener("click", ()=>{
@@ -79,4 +80,13 @@ divUpdateInfoOptions.addEventListener("click", ()=>{
     divUpdateInfo.style.zIndex = "2"
 
     pTitle.innerHTML = "Update Info"
+})
+
+
+
+// logout functionality
+divLogout.addEventListener("click", ()=>{
+    sessionStorage.removeItem('token');
+
+    window.location.href="http://localhost:8080/Project1/"
 })

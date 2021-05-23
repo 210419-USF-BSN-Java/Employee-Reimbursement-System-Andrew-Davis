@@ -1,9 +1,8 @@
 document.getElementById("input-login").addEventListener("click", requestLogin);
 
-function requestLogin(){
-	
-	let user = document.querySelector(".username").value;
-	let pass = document.querySelector(".password").value;
+function requestLogin() {
+	let user = document.querySelector(".input-username").value;
+	let pass = document.querySelector(".input-password").value;
 	
 	let xhr = new XMLHttpRequest();
 	let url = "http://localhost:8080/Project1/login";
@@ -21,7 +20,16 @@ function requestLogin(){
 				if the login is successful, redirects to the home page
 			*/
             // You will need to differentiate between and employee and manager
-			window.location.href="http://localhost:8080/Project1/employee"
+			let sessionVariable = sessionStorage.getItem("token");
+			let tokenArr = []
+			tokenArr = sessionVariable.split(":");
+
+			if(tokenArr[1] == "Employee") {
+				window.location.href="http://localhost:8080/Project1/employee"
+			}
+			else if(tokenArr[1] == "Manager") {
+				window.location.href="http://localhost:8080/Project1/manager"
+			}
 		} 
 		else if (xhr.readyState == 4){
 			document.getElementById('message').innerHTML='Incorrect credentials!';

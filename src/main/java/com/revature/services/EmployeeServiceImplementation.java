@@ -2,7 +2,7 @@ package com.revature.services;
 
 import java.util.ArrayList;
 
-import com.revature.daos.EmployeePostgres;
+import com.revature.daos.UserPostgres;
 import com.revature.daos.ReimbursementPostgres;
 import com.revature.daos.RolePostgres;
 import com.revature.daos.StatusPostgres;
@@ -13,7 +13,7 @@ import com.revature.models.User;
 
 public class EmployeeServiceImplementation implements EmployeeService {
 	
-	private EmployeePostgres ep = new EmployeePostgres();
+	private UserPostgres up = new UserPostgres();
 	private ReimbursementPostgres rep = new ReimbursementPostgres();
 	
 	private RolePostgres rop = new RolePostgres();

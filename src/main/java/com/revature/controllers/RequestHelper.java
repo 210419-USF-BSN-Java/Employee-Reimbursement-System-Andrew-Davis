@@ -36,26 +36,40 @@ public class RequestHelper {
 			// at this point, uriString = planets
 		}
 		
-		// employee
 		
-		// manager
-		
-		// reimbursement
+
 		switch (uriString.toString()) {
-		case "login":
-			ld.process(request, response);
-			break;
-		case "employee":
-			ed.process(request, response);
-			break;
-		case "manager":
-			md.process(request, response);
-			break;
-		case "reimbursement":
-			rd.process(request, response);
-			break;
-		default:
-			response.sendError(404, "Path not supported");
+
+			case "login":
+				ld.process(request, response);
+				break;
+
+			case "employee":
+				// if(!ld.isAuthorized(request)) {
+				// 	response.sendError(401);
+				// 	return;
+				// }
+				ed.process(request, response);
+				break;
+
+			case "manager":
+				// if(!ld.isAuthorized(request)) {
+				// 	response.sendError(401);
+				// 	return;
+				// }
+				md.process(request, response);
+				break;
+
+			case "reimbursement":
+				// if(!ld.isAuthorized(request)) {
+				// 	response.sendError(401);
+				// 	return;
+				// }
+				rd.process(request, response);
+				break;
+
+			default:
+				response.sendError(404, "Path not supported");
 		}
 	}
 }

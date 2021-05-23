@@ -1,5 +1,6 @@
 com\revature\daos\TypeDao.class
 com\revature\delegates\ManagerDelegate.class
+com\revature\daos\UserPostgres.class
 com\revature\daos\StatusPostgres.class
 com\revature\services\ManagerService.class
 com\revature\services\ManagerServiceImplementation.class
@@ -16,14 +17,11 @@ com\revature\models\Type.class
 com\revature\delegates\ReimbDelegate.class
 com\revature\controllers\FrontController.class
 com\revature\services\EmployeeServiceImplementation.class
-com\revature\daos\ManagerDao.class
 com\revature\daos\ReimbursementPostgres.class
 com\revature\daos\StatusDao.class
 com\revature\models\Status.class
 com\revature\daos\TypePostgres.class
-com\revature\daos\EmployeeDao.class
-com\revature\daos\EmployeePostgres.class
-com\revature\daos\ManagerPostgres.class
+com\revature\daos\UserDao.class
 com\revature\delegates\LoginDelegate.class
 com\revature\daos\ReimbursementDao.class
 com\revature\delegates\EmployeeDelegate.class

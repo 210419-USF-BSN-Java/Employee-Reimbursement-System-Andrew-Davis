@@ -38,17 +38,17 @@ divBody.style.height = bodyHeight + "px"
 
 divOptions.style.height = bodyHeight + "px"
 
-// window.addEventListener("resize", ()=>{
-//     windowHeight = window.innerHeight
-//     bodyHeight = windowHeight - 150
+window.addEventListener("resize", ()=>{
+    windowHeight = window.innerHeight
+    bodyHeight = windowHeight - 150
 
-//     divBody.style.height = bodyHeight + "px"
-//     // divSubmit.style.height = bodyHeight + "px"
-//     // divViewPending.style.height = bodyHeight + "px"
-//     // divViewResolved.style.height = bodyHeight + "px"
-//     // divUploadReceipt.style.height = bodyHeight + "px"
-//     // divViewInfo.style.height = bodyHeight + "px"
-//     // divUpdateInfo.style.height = bodyHeight + "px"
+    divBody.style.height = bodyHeight + "px"
+    // divSubmit.style.height = bodyHeight + "px"
+    // divViewPending.style.height = bodyHeight + "px"
+    // divViewResolved.style.height = bodyHeight + "px"
+    // divUploadReceipt.style.height = bodyHeight + "px"
+    // divViewInfo.style.height = bodyHeight + "px"
+    // divUpdateInfo.style.height = bodyHeight + "px"
 
-//     divOptions.style.height = bodyHeight + "px"
-// })
+    divOptions.style.height = bodyHeight + "px"
+})

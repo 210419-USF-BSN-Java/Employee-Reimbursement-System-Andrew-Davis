@@ -7,16 +7,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.daos.EmployeePostgres;
-import com.revature.daos.ManagerPostgres;
+import com.revature.daos.UserPostgres;
 import com.revature.models.User;
 
 public class LoginDelegate implements Delegatable {
-	private ObjectMapper om = new ObjectMapper();
 	
-	private EmployeePostgres ep = new EmployeePostgres();
-	private ManagerPostgres mp = new ManagerPostgres();
+	private UserPostgres up = new UserPostgres();
 
 	@Override
 	public void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -31,41 +27,39 @@ public class LoginDelegate implements Delegatable {
 		if (path == null || path.equals("")) {
 			switch(request.getMethod()) {
 				case "GET":
-                    String username = request.getParameter("username");
-                    String password = request.getParameter("password");
-
-                    User emp = null;
-                    User man = null;
-                    
-                    // assuming the user exists in one of the two tables and the user input is correct ...
-                    // ... one of these will be null and the other not.
-                    // Return the one that is not
-                    emp = ep.getByUsernameAndPassword(username, password);
-                    man = mp.getByUsernameAndPassword(username, password);
-
-                    if(emp != null) {
-						String token = emp.getErs_user_id() + ":" + "Employee";
-						response.setStatus(200);
-						response.setHeader("Authorization", token);
-                    }
-                    else if(man != null) {
-                        String token = man.getErs_user_id() + ":" + "Manager";
-						response.setStatus(200);
-						response.setHeader("Authorization", token);
-                    } else {
-						response.sendError(401);
-					}
-                    
-                    // once the user is returned, the client side javascript will set the session variable ...
-                    // ... for the user id
-                    
+                    // logic
 					break;
 				case "PUT":
 					// logic
 					break;
 				case "POST":
 					// logic
+
+					String username = request.getParameter("username");
+                    String password = request.getParameter("password");
+
+                    User user = up.getByUsernameAndPassword(username, password);
+
+					// Employees have even user_ids
+					// Managers have odd user_ids
+                    if(user.getUser_role_id() == 1) {
+                        String token = user.getErs_user_id() + ":" + "Employee";
+						response.setStatus(200);
+						response.setHeader("Authorization", token);
+                    }
+					else if(user.getUser_role_id() == 2) {
+                        String token = user.getErs_user_id() + ":" + "Manager";
+						response.setStatus(200);
+						response.setHeader("Authorization", token);
+                    } 
+					else {
+						response.sendError(401);
+					}
+                    
+                    // once the user is returned, the client side javascript will set the session variable ...
+                    // ... for the user id
 					break;
+
 				case "DELETE":
 					// logic
 					break;
@@ -87,14 +81,17 @@ public class LoginDelegate implements Delegatable {
 				String idStr = tokenArr[0];
 				String userRoleStr = tokenArr[1];
 
-				// for employee
-				User u_e = ep.getById(Integer.parseInt(idStr));
-				if (u_e != null && u_e.getUser_role_id().equals(userRoleStr)) {
-					return true;
+				Integer userRoleId = 0;
+				if(userRoleStr == "1") {
+					userRoleId = 1;
+				} else {
+					userRoleId = 2;
 				}
-				// for manager
-				User u_m = mp.getById(Integer.parseInt(idStr));
-				if (u_m != null && u_m.getUser_role_id().equals(userRoleStr)) {
+
+				// check to see if there is a valid user and if that user is the appropriate
+				// role in their token
+				User u = up.getById(Integer.parseInt(idStr));
+				if (u != null && u.getUser_role_id().equals(userRoleId)) {
 					return true;
 				}
 			}
