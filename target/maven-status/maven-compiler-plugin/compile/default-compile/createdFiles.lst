@@ -22,6 +22,7 @@ com\revature\daos\StatusDao.class
 com\revature\models\Status.class
 com\revature\daos\TypePostgres.class
 com\revature\daos\UserDao.class
+com\revature\delegates\UserDelegate.class
 com\revature\delegates\LoginDelegate.class
 com\revature\daos\ReimbursementDao.class
 com\revature\delegates\EmployeeDelegate.class

@@ -10,6 +10,7 @@ import com.revature.delegates.EmployeeDelegate;
 import com.revature.delegates.LoginDelegate;
 import com.revature.delegates.ManagerDelegate;
 import com.revature.delegates.ReimbDelegate;
+import com.revature.delegates.UserDelegate;
 
 public class RequestHelper {
 	
@@ -17,6 +18,7 @@ public class RequestHelper {
 	ManagerDelegate md = new ManagerDelegate();
 	ReimbDelegate rd = new ReimbDelegate();
 	LoginDelegate ld = new LoginDelegate();
+	UserDelegate ud = new UserDelegate();
 	
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		// /Project1/reimbursement
@@ -58,6 +60,14 @@ public class RequestHelper {
 				// 	return;
 				// }
 				md.process(request, response);
+				break;
+				
+			case "user":
+				// if(!ld.isAuthorized(request)) {
+				// 	response.sendError(401);
+				// 	return;
+				// }
+				ud.process(request, response);
 				break;
 
 			case "reimbursement":

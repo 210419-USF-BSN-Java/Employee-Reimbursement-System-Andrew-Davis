@@ -16,7 +16,7 @@ public class UserPostgres implements UserDao {
 	@Override
 	public User getById(Integer u_id) {
 		
-		String sql = "SELECT * FROM ers_users WHERE ers_user_id = ? AND user_role_id = 2";
+		String sql = "SELECT * FROM ers_users WHERE ers_user_id = ?";
 
 		User u = new User();
 		try(Connection conn = DBConnection.getConnectionFromFile()){

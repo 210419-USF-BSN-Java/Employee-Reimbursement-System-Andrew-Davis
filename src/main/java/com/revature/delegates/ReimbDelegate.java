@@ -18,7 +18,7 @@ public class ReimbDelegate implements Delegatable {
 	private ObjectMapper om = new ObjectMapper();
 
 	private ReimbursementPostgres rp = new ReimbursementPostgres();
-	private RolePostgres rop = new RolePostgres();
+	// private RolePostgres rop = new RolePostgres();
 	
 	@Override
 	public void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -74,9 +74,9 @@ public class ReimbDelegate implements Delegatable {
 					
 					// Instead of adding a reimbursement which has a ton of fields i just called add on role because it is simpler...
 					// .. for this test
-					String role = request.getParameter("user_role");
-					Role r = new Role(role);
-					rop.add(r);
+					// String role = request.getParameter("user_role");
+					// Role r = new Role(role);
+					// rop.add(r);
 					
 //					response.setStatus(201);
 					
