@@ -43,9 +43,7 @@ CREATE TABLE IF NOT EXISTS ers_reimbursements (
 );
 
 
-
 ---------------------------------------------------
-
 
 
 INSERT INTO ers_user_roles (user_role)
@@ -76,17 +74,19 @@ VALUES
 
 INSERT INTO ers_reimbursements (reimb_amount, reimb_submitted, reimb_resolved, reimb_description, reimb_receipt, reimb_author, reimb_resolver, reimb_status_id, reimb_type_id)
 VALUES
-(123.50, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I took a group of clients out for dinner.', '', 1, NULL, 1, 3),
-(290.50, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I stayed the night at a nice hotel.', '', 1, NULL, 1, 1),
-(45.50, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I was required to drive 50 miles', '', 2, NULL, 1, 2),
-(123.50, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I took a group of clients out for lunch.', '', 1, NULL, 1, 3),
-(590.50, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I stayed a week at a nice hotel.', '', 1, NULL, 1, 1),
-(21.50, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I was required to drive 25 miles', '', 2, NULL, 1, 2),
-(40.50, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I was required to drive 30 miles', '', 1, 4, 2, 2),
-(80.50, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I was required to drive 100 miles', '', 1, 4, 2, 2),
-(45.50, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I stayed at an Air BnB', '', 2, 4, 3, 1),
-(40.50, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I stayed at a hotel', '', 1, 5, 2, 1),
-(80.50, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I was required to drive 100 miles', '', 1, 5, 2, 2),
-(45.50, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I was required to drive 30 miles', '', 2, 5, 3, 2);
+(123.59, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I took a group of clients out for dinner.', '', 1, NULL, 1, 3),
+(290.51, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I stayed the night at a nice hotel.', '', 1, NULL, 1, 1),
+(45.52, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I was required to drive 50 miles', '', 2, NULL, 1, 2),
+(123.52, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I took a group of clients out for lunch.', '', 1, NULL, 1, 3),
+(590.57, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I stayed a week at a nice hotel.', '', 1, NULL, 1, 1),
+(21.51, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I was required to drive 25 miles', '', 2, NULL, 1, 2),
+(40.54, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I was required to drive 30 miles', '', 1, 4, 2, 2),
+(80.53, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I was required to drive 100 miles', '', 1, 4, 2, 2),
+(45.51, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I stayed at an Air BnB', '', 2, 4, 3, 1),
+(40.52, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I stayed at a hotel', '', 1, 5, 2, 1),
+(80.53, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I was required to drive 100 miles', '', 1, 5, 2, 2),
+(45.59, '2020-05-21 08:00:00', '2020-05-21 08:10:00', 'I was required to drive 30 miles', '', 2, 5, 3, 2);
+
+
 
 
