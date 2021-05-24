@@ -11,6 +11,7 @@ import com.revature.delegates.EmployeesDelegate;
 import com.revature.delegates.LoginDelegate;
 import com.revature.delegates.ManagerDelegate;
 import com.revature.delegates.ReimbDelegate;
+import com.revature.delegates.ReimbsDelegate;
 import com.revature.delegates.UserDelegate;
 
 public class RequestHelper {
@@ -19,6 +20,7 @@ public class RequestHelper {
 	EmployeesDelegate esd = new EmployeesDelegate();
 	ManagerDelegate md = new ManagerDelegate();
 	ReimbDelegate rd = new ReimbDelegate();
+	ReimbsDelegate rsd = new ReimbsDelegate();
 	LoginDelegate ld = new LoginDelegate();
 	UserDelegate ud = new UserDelegate();
 	
@@ -86,6 +88,13 @@ public class RequestHelper {
 				// 	return;
 				// }
 				rd.process(request, response);
+				break;
+			case "reimbursements":
+				// if(!ld.isAuthorized(request)) {
+				// 	response.sendError(401);
+				// 	return;
+				// }
+				rsd.process(request, response);
 				break;
 
 			default:

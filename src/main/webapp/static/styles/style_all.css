@@ -155,14 +155,23 @@ body {
     scrollbar-width: none;  /* Firefox */
 }
 
+#div-body-top {
+    height: 5em; /* 160px */
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%;
+    background-color: #ff7d3b!important;
+}
 
 
 
 
-[class^="div-reimb-card-"] {
+
+[class^="div-card-"] {
     background-color: #ffffff;
 
     border: 2px solid #929292;
 
     margin: 1em;
+    padding: 1em;
 }

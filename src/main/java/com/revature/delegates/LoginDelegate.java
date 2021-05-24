@@ -56,8 +56,6 @@ public class LoginDelegate implements Delegatable {
 						response.sendError(401);
 					}
                     
-                    // once the user is returned, the client side javascript will set the session variable ...
-                    // ... for the user id
 					break;
 
 				case "DELETE":

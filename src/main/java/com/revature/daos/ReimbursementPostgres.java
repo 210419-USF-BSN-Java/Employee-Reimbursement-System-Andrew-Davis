@@ -105,7 +105,7 @@ public class ReimbursementPostgres implements ReimbursementDao {
 	@Override
 	public Integer update(Reimbursement r) {
 		String sql = "UPDATE ers_reimbursements"
-				+ "SET reimb_amount = ?, "
+				+ " SET reimb_amount = ?,"
 				+ " reimb_submitted = ?,"
 				+ " reimb_resolved = ?,"
 				+ " reimb_description = ?,"

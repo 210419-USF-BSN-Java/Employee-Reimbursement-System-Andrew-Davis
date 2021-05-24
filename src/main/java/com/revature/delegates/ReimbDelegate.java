@@ -27,8 +27,6 @@ public class ReimbDelegate implements Delegatable {
 	
 	@Override
 	public void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
 		
 		// After processing the path attribute set at the Servlet Context/Application level here ...
 		String path = (String) request.getAttribute("path");
@@ -98,7 +96,7 @@ public class ReimbDelegate implements Delegatable {
 		} else {
 			// further processing
 			// further processing
-            int userId = Integer.valueOf(path);
+//            int userId = Integer.valueOf(path);
 
             switch (request.getMethod()) {
                 case "GET":
@@ -107,35 +105,6 @@ public class ReimbDelegate implements Delegatable {
                     break;
 				case "POST":
 					// logic to update a user
-					String timestampAsString = "Nov 12, 2018 13:02:56.12345678";
-					DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern(request.getParameter("submitted"));
-					LocalDateTime localDateTime1 = LocalDateTime.from(formatter1.parse(timestampAsString));
-					Timestamp timestamp1 = Timestamp.valueOf(localDateTime1);
-					
-					DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern(request.getParameter("resolved"));
-					LocalDateTime localDateTime2 = LocalDateTime.from(formatter2.parse(timestampAsString));
-					Timestamp timestamp2 = Timestamp.valueOf(localDateTime2);
-					
-					Integer id = Integer.parseInt(request.getParameter("id"));
-					Double amount = Double.parseDouble(request.getParameter("amount"));
-					Timestamp submitted = timestamp1;
-					Timestamp resolved = timestamp2;
-					String description = request.getParameter("description");
-//					String receipt = request.getParameter("receipt");
-					Integer author = Integer.parseInt(request.getParameter("author"));
-					Integer resolver = Integer.parseInt(request.getParameter("resolver"));
-					Integer status = Integer.parseInt(request.getParameter("status"));
-					Integer type = Integer.parseInt(request.getParameter("type"));
-					
-					// you can just pass in a 1 here into the constructor to indicate that it is an employee ...
-					// ... as the manager does not have an update info section
-					Reimbursement r = new Reimbursement(id, amount, submitted, resolved, description, null, author, resolver, status, type);
-					
-					rp.updateId(r);
-					
-//					request.getRequestDispatcher("/static/view/employee.html").forward(request, response);
-					response.sendRedirect("/Project1/employee");
-                    
 				break;
                 case "DELETE":
                     //logic to remove a user

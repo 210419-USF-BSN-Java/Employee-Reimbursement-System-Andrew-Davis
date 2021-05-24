@@ -33,7 +33,7 @@ async function getDataPending() {
         let pendingText = ``
 
         for(var i = 0; i < pendingData.length; i++) {
-            pendingText += `<div class='div-reimb-card-pending-${i}'>`
+            pendingText += `<div class='div-card-pending-${i}'>`
                 pendingText += "Amount: " + pendingData[i].reimb_amount
                 pendingText += "<br>"
                 
@@ -82,19 +82,12 @@ async function getDataPending() {
                 }
 
                 pendingText += `<br><br>`
-                // APPROVE or deny
+                // APPROVE or...
                 pendingText += `
-                    <form action="/Project1/reimbursement/${data.reimb_id}" method="POST">
-                        <input type="text" name="id" value="${data.reimb_id}" style="display: none;">
-                        <input type="text" name="amount" value="${data.reimb_amount}" style="display: none;">
-                        <input type="text" name="submitted" value="${data.reimb_submitted}" style="display: none;">
-                        <input type="text" name="resolved" value="${data.reimb_resolved}" style="display: none;">
-                        <input type="text" name="description" value="${data.reimb_description}" style="display: none;">
-                        <input type="text" name="receipt" value="${data.reimb_receipt}" style="display: none;">
-                        <input type="text" name="author" value="${data.reimb_author}" style="display: none;">
-                        <input type="text" name="resolver" value="${userId}" style="display: none;">
-                        <input type="text" name="status" value="2" style="display: none;">
-                        <input type="text" name="type" value="${data.reimb_type_id}" style="display: none;">
+                    <form action="/Project1/reimbursements" method="POST">
+                        <input type="text" name="id" value='${pendingData[i].reimb_id}' style="display: none;">
+                        <input type="text" name="choice" value="2" style="display: none;">
+                        <input type="text name="resolver" value="${userId}" style="display: none;">
                         
                         <input type="submit" name="accept" value="Approve"></input>
                     </form>
@@ -102,19 +95,12 @@ async function getDataPending() {
 
 
                 pendingText += `<br><br>`
-                // approve or DENY
+                // ... DENY
                 pendingText += `
-                    <form action="/Project1/reimbursement/${data.reimb_id}" method="POST">
-                        <input type="text" name="id" value="${data.reimb_id}" style="display: none;">
-                        <input type="text" name="amount" value="${data.reimb_amount}" style="display: none;">
-                        <input type="text" name="submitted" value="${data.reimb_submitted}" style="display: none;">
-                        <input type="text" name="resolved" value="${data.reimb_resolved}" style="display: none;">
-                        <input type="text" name="description" value="${data.reimb_description}" style="display: none;">
-                        <input type="text" name="receipt" value="${data.reimb_receipt}" style="display: none;">
-                        <input type="text" name="author" value="${data.reimb_author}" style="display: none;">
-                        <input type="text" name="resolver" value="${userId}" style="display: none;">
-                        <input type="text" name="status" value="3" style="display: none;">
-                        <input type="text" name="type" value="${data.reimb_type_id}" style="display: none;">
+                    <form action="/Project1/reimbursements" method="POST">
+                        <input type="text" name="id" value="${pendingData[i].reimb_id}" style="display: none;">
+                        <input type="text" name="choice" value="3" style="display: none;">
+                        <input type="text name="resolver" value="${userId}" style="display: none;">
                         
                         <input type="submit" name="deny" value="Deny"></input>
                     </form>
@@ -151,7 +137,7 @@ async function getDataResolved() {
         let resolvedText = ``
 
         for(var i = 0; i < resolvedData.length; i++) {
-            resolvedText += `<div class='div-reimb-card-pending-${i}'>`
+            resolvedText += `<div class='div-card-resolved-${i}'>`
                 resolvedText += "Amount: " + resolvedData[i].reimb_amount
                 resolvedText += "<br>"
                 
@@ -227,7 +213,7 @@ async function getDataAllEmployees() {
         let text = ``
 
         for(var i = 0; i < emps.length; i++) {
-            text += `<div class=div-employee-info-${i}>`
+            text += `<div class='div-card-employee-${i}'>`
                 text += `User Id: ${emps[i].ers_user_id} <br>`
                 text += `Username: ${emps[i].ers_username} <br>`
                 text += `First Name: ${emps[i].user_first_name} <br>`
@@ -242,8 +228,8 @@ async function getDataAllEmployees() {
 
 async function oneEmployee() {
     let text =  `
-        <div class="div-search-emp">
-            <label>Username: </label><br>
+        <div class="div-card-emp">
+            <label>User ID: </label><br>
             <input type="text" class="emp-userId"></input><br><br>
             <input type="button" class="emp-search" value="Search"></input>
         </div>
@@ -268,7 +254,7 @@ async function oneEmployee() {
 
             let text = ``
             for(let i = 0; i < specificUserReimbs.length; i++) {
-                text += `<div class='div-reimb-card-pending-${i}'>`
+                text += `<div class='div-card-resolved-${i}'>`
                     text += "Amount: " + specificUserReimbs[i].reimb_amount
                     text += "<br>"
                     

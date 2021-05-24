@@ -14,10 +14,6 @@ public class ManagerServiceImplementation implements ManagerService {
 	
 	private UserPostgres up = new UserPostgres();
 	private ReimbursementPostgres rep = new ReimbursementPostgres();
-	
-	private RolePostgres rop = new RolePostgres();
-	private StatusPostgres sp = new StatusPostgres();
-	private TypePostgres tp = new TypePostgres();
 
 	@Override
 	public void login() {

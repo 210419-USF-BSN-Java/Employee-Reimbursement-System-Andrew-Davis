@@ -15,11 +15,6 @@ public class EmployeeServiceImplementation implements EmployeeService {
 	
 	private UserPostgres up = new UserPostgres();
 	private ReimbursementPostgres rep = new ReimbursementPostgres();
-	
-	private RolePostgres rop = new RolePostgres();
-	private StatusPostgres sp = new StatusPostgres();
-	private TypePostgres tp = new TypePostgres();
-
 	@Override
 	public void login() {
 		// TODO Auto-generated method stub
@@ -32,7 +27,7 @@ public class EmployeeServiceImplementation implements EmployeeService {
 
 	@Override
 	public void submitReimbursementRequest(Integer i, Reimbursement r) {
-		rep.add(i, r);
+		// TODO Auto-generated method stub
 	}
 
 	@Override
