@@ -237,7 +237,7 @@ async function setDataSubmit() {
                     <label>Receipt</label><br>
                     <input type="text" class="form-submit-receipt" name="receipt" value=""></input><br><br>
                     
-                    <label>Type (Lodging: 1, Travel: 2, Food: 3, Other: 4)</label><br>
+                    <label>Type<br>(Lodging: 1, Travel: 2, Food: 3, Other: 4)</label><br>
                     <input type="number" class="form-submit-type" name="type" value=""></input><br><br>
 
                     <input type="submit" class="form-update-info-submit" name="submit" value="Submit"></input>
