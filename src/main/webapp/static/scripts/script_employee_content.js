@@ -38,7 +38,7 @@ async function getDataPending(){
 
         for(var i = 0; i < pendingData.length; i++) {
             pendingText += `<div class='div-card-pending-${i}'>`
-                pendingText += "Amount: " + pendingData[i].reimb_amount
+                pendingText += "Amount: $" + pendingData[i].reimb_amount
                 pendingText += "<br>"
                 
                 pendingText += "Submitted: " + pendingData[i].reimb_submitted
@@ -115,7 +115,7 @@ async function getDataResolved(){
 
         for(var i = 0; i < resolvedData.length; i++) {
             text += `<div class='div-card-resolved-${i}'>`
-                text += "Amount: " + resolvedData[i].reimb_amount
+                text += "Amount: $" + resolvedData[i].reimb_amount
                 text += "<br>"
                 
                 text += "Submitted: " + resolvedData[i].reimb_submitted

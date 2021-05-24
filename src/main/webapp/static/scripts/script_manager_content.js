@@ -34,7 +34,7 @@ async function getDataPending() {
 
         for(var i = 0; i < pendingData.length; i++) {
             pendingText += `<div class='div-card-pending-${i}'>`
-                pendingText += "Amount: " + pendingData[i].reimb_amount
+                pendingText += "Amount: $" + pendingData[i].reimb_amount
                 pendingText += "<br>"
                 
                 pendingText += "Submitted: " + pendingData[i].reimb_submitted
@@ -138,7 +138,7 @@ async function getDataResolved() {
 
         for(var i = 0; i < resolvedData.length; i++) {
             resolvedText += `<div class='div-card-resolved-${i}'>`
-                resolvedText += "Amount: " + resolvedData[i].reimb_amount
+                resolvedText += "Amount: $" + resolvedData[i].reimb_amount
                 resolvedText += "<br>"
                 
                 resolvedText += "Submitted: " + resolvedData[i].reimb_submitted
@@ -226,10 +226,10 @@ async function getDataAllEmployees() {
     }
 }
 
-async function oneEmployee() {
+async function getOneEmployee() {
     let text =  `
         <div class="div-card-emp">
-            <label>User ID: </label><br>
+            <label>User ID </label><br>
             <input type="text" class="emp-userId"></input><br><br>
             <input type="button" class="emp-search" value="Search"></input>
         </div>
@@ -255,7 +255,7 @@ async function oneEmployee() {
             let text = ``
             for(let i = 0; i < specificUserReimbs.length; i++) {
                 text += `<div class='div-card-resolved-${i}'>`
-                    text += "Amount: " + specificUserReimbs[i].reimb_amount
+                    text += "Amount: $" + specificUserReimbs[i].reimb_amount
                     text += "<br>"
                     
                     text += "Submitted: " + specificUserReimbs[i].reimb_submitted
@@ -313,6 +313,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // call the functions to populate the page on dom content load
     getDataPending()
     getDataResolved()
-    oneEmployee()
+    getOneEmployee()
     getDataAllEmployees()
 })

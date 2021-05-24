@@ -21,6 +21,23 @@ body {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
 }
+.div-picture-body-1 {
+    height: 100%;
+    width: 16em;
+
+    justify-self: end;
+
+    background-color: #ff7d3b!important;
+    
+}
+.div-picture-body-2 {
+    height: 100%;
+    width: 2em;
+
+    justify-self: end;
+
+    background-color: #484848!important;
+}
 .div-menu-body {
     display: grid;
     grid-template-rows: 1fr 1fr;

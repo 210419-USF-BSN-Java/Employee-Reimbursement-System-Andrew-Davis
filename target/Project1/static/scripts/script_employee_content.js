@@ -38,7 +38,7 @@ async function getDataPending(){
 
         for(var i = 0; i < pendingData.length; i++) {
             pendingText += `<div class='div-card-pending-${i}'>`
-                pendingText += "Amount: " + pendingData[i].reimb_amount
+                pendingText += "Amount: $" + pendingData[i].reimb_amount
                 pendingText += "<br>"
                 
                 pendingText += "Submitted: " + pendingData[i].reimb_submitted
@@ -115,7 +115,7 @@ async function getDataResolved(){
 
         for(var i = 0; i < resolvedData.length; i++) {
             text += `<div class='div-card-resolved-${i}'>`
-                text += "Amount: " + resolvedData[i].reimb_amount
+                text += "Amount: $" + resolvedData[i].reimb_amount
                 text += "<br>"
                 
                 text += "Submitted: " + resolvedData[i].reimb_submitted
@@ -192,19 +192,19 @@ async function getDataInfo() {
         text = `
             <div class="div-card-update-info">
                 <form class="form-update-info" action="/Project1/user/${userId}" method="POST">
-                    <label>Username:</label><br>
+                    <label>Username</label><br>
                     <input type="text" class="form-update-info-username" name="username" value="${data.ers_username}"></input><br><br>
                     
-                    <label>Password:</label><br>
+                    <label>Password</label><br>
                     <input type="text" class="form-update-info-password" name="password" value=""></input><br><br>
                     
-                    <label>First Name:</label><br>
+                    <label>First Name</label><br>
                     <input type="text" class="form-update-info-firstname" name="firstname" value="${data.user_first_name}"></input><br><br>
                     
-                    <label>Last Name:</label><br>
+                    <label>Last Name</label><br>
                     <input type="text" class="form-update-info-lastname" name="lastname" value="${data.user_last_name}"></input><br><br>
                     
-                    <label>Email:</label><br>
+                    <label>Email</label><br>
                     <input type="text" class="form-update-info-email" name="email" value="${data.user_email}"></input><br><br><br>
                     
                     <input type="number" class="form-update-info-hidden-role" name="role" value="${data.user_role_id}" style="display: none;"></input>
@@ -228,16 +228,16 @@ async function setDataSubmit() {
                 <form class="form-submit" action="/Project1/reimbursement" method="POST">
                     <input type="number" class="form-sumbit-id" name="id" value="${userId}" style="display: none;"></input>
                     
-                    <label>Amount:</label><br>
+                    <label>Amount</label><br>
                     <input type="text" class="form-submit-amount" name="amount" value=""></input><br><br>
                     
-                    <label>Description:</label><br>
+                    <label>Description</label><br>
                     <input type="text" class="form-submit-description" name="description" value=""></input><br><br>
                     
-                    <label>Receipt:</label><br>
+                    <label>Receipt</label><br>
                     <input type="text" class="form-submit-receipt" name="receipt" value=""></input><br><br>
                     
-                    <label>Type (Lodging: 1, Travel: 2, Food: 3, Other: 4):</label><br>
+                    <label>Type (Lodging: 1, Travel: 2, Food: 3, Other: 4)</label><br>
                     <input type="number" class="form-submit-type" name="type" value=""></input><br><br>
 
                     <input type="submit" class="form-update-info-submit" name="submit" value="Submit"></input>
@@ -255,5 +255,4 @@ document.addEventListener("DOMContentLoaded", () => {
     getDataPending()
     getDataResolved()
     getDataInfo()
-    
 })
