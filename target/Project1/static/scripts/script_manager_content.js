@@ -2,7 +2,8 @@ var divPendingBody = document.querySelector(".div-body-view-pending")
 var divResolvedBody = document.querySelector(".div-body-view-resolved")
 var divViewOne = document.querySelector(".div-body-viewone-employee")
 var divViewAll = document.querySelector(".div-body-viewall-employees")
-
+var divOneSearchBar = document.querySelector(".div-one-search-bar")
+var divOneResults = document.querySelector(".div-one-results")
 
 
 // get the user id from the token and assign it globally for any route that may need it
@@ -247,13 +248,77 @@ async function oneEmployee() {
             <input type="button" class="emp-search" value="Search"></input>
         </div>
     `
-    divViewOne.innerHTML = text
+    divOneSearchBar.innerHTML = text
 
     var searchBtn = document.querySelector(".emp-search")
-    searchBtn.addEventListener("click", () => {
+    searchBtn.addEventListener("click", async () => {
         let userId = document.querySelector(".emp-userId").value
+        
+        let response = await fetch(apiURLreimbursement);
+        if(response.status >= 200 && response.status < 300){
+            let data = await response.json();
+            let specificUserReimbs = []
+    
+            // filter the list/array so that only RESOLVED reimbersements are left
+            for(var i = 0; i < data.length; i++) {
+                if(data[i].reimb_author == userId && data[i].reimb_status_id != 1){
+                    specificUserReimbs.push(data[i])
+                }
+            }
 
-        alert(userId)
+            let text = ``
+            for(let i = 0; i < specificUserReimbs.length; i++) {
+                text += `<div class='div-reimb-card-pending-${i}'>`
+                    text += "Amount: " + specificUserReimbs[i].reimb_amount
+                    text += "<br>"
+                    
+                    text += "Submitted: " + specificUserReimbs[i].reimb_submitted
+                    text += "<br>"
+                    
+                    text += "Resolved: " + specificUserReimbs[i].reimb_resolved
+                    text += "<br>"
+                    
+                    text += "Description: " + specificUserReimbs[i].reimb_description
+                    text += "<br>"
+                    
+                    text += "Receipt: " + specificUserReimbs[i].reimb_receipt
+                    text += "<br>"
+                    
+                    text += "Author: " + specificUserReimbs[i].reimb_author
+                    text += "<br>"
+                    
+                    text += "Resolver: " + specificUserReimbs[i].reimb_resolver
+                    text += "<br>"
+                    
+                    text += "Status: "
+                    if(specificUserReimbs[i].reimb_status_id == 1) {
+                        text += "Pending"
+                    }
+                    else if(specificUserReimbs[i].reimb_status_id == 2) {
+                        text += "Accepted"
+                    }
+                    else {
+                        text += "Rejected"
+                    }
+                    text += "<br>"
+
+                    text += `Type: `
+                    if(specificUserReimbs[i].reimb_type_id == 1){
+                        text += "Lodging"
+                    }
+                    else if (specificUserReimbs[i].reimb_type_id == 2) {
+                        text += "Travel"
+                    }
+                    else if (specificUserReimbs[i].reimb_type_id == 3) {
+                        text += "Food"
+                    }
+                    else {
+                        text += "Other"
+                    }
+                    text += `</div>`
+            }
+            divOneResults.innerHTML = text
+        }
     })
 }
 
