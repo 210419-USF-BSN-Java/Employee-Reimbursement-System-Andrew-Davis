@@ -65,7 +65,7 @@ public class UserPostgres implements UserDao {
 	
 	@Override
 	public ArrayList<User> getAll() {
-		String sql = "SELECT * FROM ers_users WHERE user_role_id = 2";
+		String sql = "SELECT * FROM ers_users";
 		
 		ArrayList<User> ua = new ArrayList<>();
 		try(Connection conn = DBConnection.getConnectionFromFile()){
@@ -86,7 +86,7 @@ public class UserPostgres implements UserDao {
 		} catch (IOException | SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return ua;
 	}
 	
 	@Override
@@ -96,9 +96,9 @@ public class UserPostgres implements UserDao {
 				+ " (ers_username,"
 				+ " ers_password,"
 				+ " user_first_name,"
-				+ " user_last_name"
-				+ " user_email"
-				+ " user_role_id) VALUES (?, ?, ?, ?, ?, 2)";
+				+ " user_last_name,"
+				+ " user_email,"
+				+ " user_role_id) VALUES (?, ?, ?, ?, ?, ?)";
 		
 		Integer affectedRows = 0;
 		
@@ -109,6 +109,7 @@ public class UserPostgres implements UserDao {
 			ps.setString(3, u.getUser_first_name());
 	        ps.setString(4, u.getUser_last_name());
 	        ps.setString(5, u.getUser_email());
+	        ps.setInt(6, u.getUser_role_id());
 	        
 	        affectedRows = ps.executeUpdate();
 		} catch (IOException | SQLException e) {
@@ -124,8 +125,8 @@ public class UserPostgres implements UserDao {
 				+ " SET ers_username = ?,"
 				+ " ers_password = ?,"
 				+ " user_first_name = ?,"
-				+ " user_last_name = ?"
-				+ " user_email = ?"
+				+ " user_last_name = ?,"
+				+ " user_email = ?,"
 				+ " user_role_id = ?"
 				+ " WHERE ers_user_id = ?";
 		

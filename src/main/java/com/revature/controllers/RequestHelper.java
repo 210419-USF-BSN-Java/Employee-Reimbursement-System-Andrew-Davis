@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.revature.delegates.EmployeeDelegate;
+import com.revature.delegates.EmployeesDelegate;
 import com.revature.delegates.LoginDelegate;
 import com.revature.delegates.ManagerDelegate;
 import com.revature.delegates.ReimbDelegate;
@@ -15,6 +16,7 @@ import com.revature.delegates.UserDelegate;
 public class RequestHelper {
 	
 	EmployeeDelegate ed = new EmployeeDelegate();
+	EmployeesDelegate esd = new EmployeesDelegate();
 	ManagerDelegate md = new ManagerDelegate();
 	ReimbDelegate rd = new ReimbDelegate();
 	LoginDelegate ld = new LoginDelegate();
@@ -52,6 +54,14 @@ public class RequestHelper {
 				// 	return;
 				// }
 				ed.process(request, response);
+				break;
+				
+			case "employees":
+				// if(!ld.isAuthorized(request)) {
+				// 	response.sendError(401);
+				// 	return;
+				// }
+				esd.process(request, response);
 				break;
 
 			case "manager":

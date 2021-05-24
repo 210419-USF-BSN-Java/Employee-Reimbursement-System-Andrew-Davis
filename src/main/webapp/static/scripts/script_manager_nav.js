@@ -1,3 +1,4 @@
+var divFrontOptions = document.querySelector(".p-man-front")
 var divViewPendingOptions = document.querySelector(".p-man-view-pending")
 var divViewResolvedOptions = document.querySelector(".p-man-view-resolved")
 var divViewOneEmplOptions = document.querySelector(".p-man-viewone-employee")
@@ -7,6 +8,7 @@ var pTitle = document.querySelector(".h1-title")
 
 
 
+var divFront = document.querySelector(".div-body-front")
 var divViewPending = document.querySelector(".div-body-view-pending")
 var divViewResolved = document.querySelector(".div-body-view-resolved")
 var divViewOneEmpl = document.querySelector(".div-body-viewone-employee")
@@ -15,8 +17,19 @@ var divViewAllEmpl = document.querySelector(".div-body-viewall-employees")
 
 
 // Havd this one on top when the page loads
-divViewPending.style.zIndex = "2"
+divFront.style.zIndex = "2"
+pTitle.innerHTML = "Home"
+divFrontOptions.addEventListener("click", ()=>{
+    divFront.style.zIndex = "2"
+    divViewPending.style.zIndex = "1"
+    divViewResolved.style.zIndex = "1"
+    divViewOneEmpl.style.zIndex = "1"
+    divViewAllEmpl.style.zIndex = "1"
+
+    pTitle.innerHTML = "Home"
+})
 divViewPendingOptions.addEventListener("click", ()=>{
+    divFront.style.zIndex = "1"
     divViewPending.style.zIndex = "2"
     divViewResolved.style.zIndex = "1"
     divViewOneEmpl.style.zIndex = "1"
@@ -25,6 +38,7 @@ divViewPendingOptions.addEventListener("click", ()=>{
     pTitle.innerHTML = "Pending"
 })
 divViewResolvedOptions.addEventListener("click", ()=>{
+    divFront.style.zIndex = "1"
     divViewPending.style.zIndex = "1"
     divViewResolved.style.zIndex = "2"
     divViewOneEmpl.style.zIndex = "1"
@@ -33,6 +47,7 @@ divViewResolvedOptions.addEventListener("click", ()=>{
     pTitle.innerHTML = "Resolved"
 })
 divViewOneEmplOptions.addEventListener("click", ()=>{
+    divFront.style.zIndex = "1"
     divViewPending.style.zIndex = "1"
     divViewResolved.style.zIndex = "1"
     divViewOneEmpl.style.zIndex = "2"
@@ -41,6 +56,7 @@ divViewOneEmplOptions.addEventListener("click", ()=>{
     pTitle.innerHTML = "Employee"
 })
 divViewAllEmplOptions.addEventListener("click", ()=>{
+    divFront.style.zIndex = "1"
     divViewPending.style.zIndex = "1"
     divViewResolved.style.zIndex = "1"
     divViewOneEmpl.style.zIndex = "1"

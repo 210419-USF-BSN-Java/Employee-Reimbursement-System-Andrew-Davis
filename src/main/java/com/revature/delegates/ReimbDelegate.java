@@ -2,6 +2,11 @@ package com.revature.delegates;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
@@ -13,12 +18,12 @@ import com.revature.daos.ReimbursementPostgres;
 import com.revature.daos.RolePostgres;
 import com.revature.models.Reimbursement;
 import com.revature.models.Role;
+import com.revature.models.User;
 
 public class ReimbDelegate implements Delegatable {
 	private ObjectMapper om = new ObjectMapper();
 
 	private ReimbursementPostgres rp = new ReimbursementPostgres();
-	// private RolePostgres rop = new RolePostgres();
 	
 	@Override
 	public void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -52,24 +57,26 @@ public class ReimbDelegate implements Delegatable {
 					break;
 				case "POST":
 					// logic
-//					Integer user_id = Integer.parseInt(request.getParameter("user"));
-//					Double amount = Double.parseDouble(request.getParameter("amount"));
-//					Timestamp submitted = Timestamp.valueOf(request.getParameter("submitted"));
-//					Timestamp resolved = Timestamp.valueOf(request.getParameter("resolved"));
-//					String description = request.getParameter("description");
-//					String receipt = request.getParameter("receipt");
-//					Integer author = user_id;
-//					// null
-//					// null
-//					
-//					// This will have to take in a string, and with a switch/if, set an int and pass in to the constructor
-//					Integer type_id = Integer.parseInt(request.getParameter("type"));
-//					
-//					Reimbursement r = new Reimbursement(amount, submitted, resolved, description, receipt, author, null, null, type_id);
-//					
-//					rp.add(user_id, r);
-//					
-//					request.getRequestDispatcher("/").forward(request, response);
+					Integer user_id = Integer.parseInt(request.getParameter("id"));
+					Double amount = Double.parseDouble(request.getParameter("amount"));
+					Timestamp submitted = new Timestamp(System.currentTimeMillis());
+					Timestamp resolved = null;
+					String description = request.getParameter("description");
+					String receipt = request.getParameter("receipt");
+					Integer author = user_id;
+					// status = 1: Pending
+					
+					// This will have to take in a string, and with a switch/if, set an int and pass in to the constructor
+					Integer type = Integer.parseInt(request.getParameter("type"));
+					
+					
+					
+					// 1 : Pending
+					Reimbursement r = new Reimbursement(amount, submitted, resolved, description, receipt, author, null, 1, type);
+					
+					rp.add(user_id, r);
+					
+//					request.getRequestDispatcher("/Projec1/employee").forward(request, response);
 					
 					
 					// Instead of adding a reimbursement which has a ton of fields i just called add on role because it is simpler...
@@ -80,7 +87,7 @@ public class ReimbDelegate implements Delegatable {
 					
 //					response.setStatus(201);
 					
-					// response.sendRedirect("/Project1/employee");
+					response.sendRedirect("/Project1/employee");
 					
 					break;
 				case "DELETE":
@@ -90,6 +97,52 @@ public class ReimbDelegate implements Delegatable {
 			}
 		} else {
 			// further processing
+			// further processing
+            int userId = Integer.valueOf(path);
+
+            switch (request.getMethod()) {
+                case "GET":
+                case "PUT":
+                    // logic to update a user
+                    break;
+				case "POST":
+					// logic to update a user
+					String timestampAsString = "Nov 12, 2018 13:02:56.12345678";
+					DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern(request.getParameter("submitted"));
+					LocalDateTime localDateTime1 = LocalDateTime.from(formatter1.parse(timestampAsString));
+					Timestamp timestamp1 = Timestamp.valueOf(localDateTime1);
+					
+					DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern(request.getParameter("resolved"));
+					LocalDateTime localDateTime2 = LocalDateTime.from(formatter2.parse(timestampAsString));
+					Timestamp timestamp2 = Timestamp.valueOf(localDateTime2);
+					
+					Integer id = Integer.parseInt(request.getParameter("id"));
+					Double amount = Double.parseDouble(request.getParameter("amount"));
+					Timestamp submitted = timestamp1;
+					Timestamp resolved = timestamp2;
+					String description = request.getParameter("description");
+//					String receipt = request.getParameter("receipt");
+					Integer author = Integer.parseInt(request.getParameter("author"));
+					Integer resolver = Integer.parseInt(request.getParameter("resolver"));
+					Integer status = Integer.parseInt(request.getParameter("status"));
+					Integer type = Integer.parseInt(request.getParameter("type"));
+					
+					// you can just pass in a 1 here into the constructor to indicate that it is an employee ...
+					// ... as the manager does not have an update info section
+					Reimbursement r = new Reimbursement(id, amount, submitted, resolved, description, null, author, resolver, status, type);
+					
+					rp.updateId(r);
+					
+//					request.getRequestDispatcher("/static/view/employee.html").forward(request, response);
+					response.sendRedirect("/Project1/employee");
+                    
+				break;
+                case "DELETE":
+                    //logic to remove a user
+                    break;
+                default:
+                    response.sendError(400, "Method not supported.");
+            }
 		}	
 	}
 }

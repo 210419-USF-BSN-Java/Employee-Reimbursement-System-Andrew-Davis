@@ -15,8 +15,7 @@ body {
 .div-logo div {
     grid-row: 1;
     grid-column: 2;
-}
-.div-logo div a {
+
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
@@ -30,8 +29,6 @@ body {
 
     justify-self: center;
     align-self: center;
-
-    cursor: pointer;
 }
 
 .div-titlebar {
@@ -156,4 +153,16 @@ body {
 [class^="div-body-"] {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+}
+
+
+
+
+
+[class^="div-reimb-card-"] {
+    background-color: #ffffff;
+
+    border: 2px solid #929292;
+
+    margin: 1em;
 }

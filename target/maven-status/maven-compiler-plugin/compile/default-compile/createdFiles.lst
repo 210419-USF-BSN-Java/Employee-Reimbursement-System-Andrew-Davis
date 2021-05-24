@@ -1,4 +1,5 @@
 com\revature\daos\TypeDao.class
+com\revature\delegates\EmployeesDelegate.class
 com\revature\delegates\ManagerDelegate.class
 com\revature\daos\UserPostgres.class
 com\revature\daos\StatusPostgres.class

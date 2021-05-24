@@ -7,6 +7,7 @@ var divUpdateBody = document.querySelector(".div-body-update-info")
 
 
 
+// get the user id from the token and assign it globally for any route that may need it
 var token = sessionStorage.getItem("token")
 var tokenArr = []
 tokenArr = token.split(":")
@@ -63,10 +64,10 @@ async function getDataPending(){
                     pendingText += "Pending"
                 }
                 else if(pendingData[i].reimb_status_id == 2) {
-                    pendingText = "Accepted"
+                    pendingText += "Accepted"
                 }
                 else {
-                    pendingText = "Rejected"
+                    pendingText += "Rejected"
                 }
                 pendingText += "<br>"
 
@@ -173,6 +174,7 @@ async function getDataInfo() {
     if(response.status >= 200 && response.status < 300){
         let data = await response.json();
 
+        // for the view data section
         let text = ``
         text += `<div class=div-user-info>`
             text += `User Id: ${data.ers_user_id} <br>`
@@ -184,7 +186,33 @@ async function getDataInfo() {
 
         divViewBody.innerHTML = text
 
-        
+
+
+        // for the update info section
+        text = `
+            <form class="form-update-info" action="/Project1/user/${userId}" method="POST">
+                <label>Username:</label><br>
+                <input type="text" class="form-update-info-username" name="username" value="${data.ers_username}"></input><br>
+                
+                <label>Password:</label><br>
+                <input type="text" class="form-update-info-password" name="password" value=""></input><br>
+                
+                <label>First Name:</label><br>
+                <input type="text" class="form-update-info-firstname" name="firstname" value="${data.user_first_name}"></input><br>
+                
+                <label>Last Name:</label><br>
+                <input type="text" class="form-update-info-lastname" name="lastname" value="${data.user_last_name}"></input><br>
+                
+                <label>Email:</label><br>
+                <input type="text" class="form-update-info-email" name="email" value="${data.user_email}"></input><br><br>
+                
+                <input type="number" class="form-update-info-hidden-role" name="role" value="${data.user_role_id}" style="display: none;"></input>
+
+                <input type="submit" class="form-update-info-submit" name="submit" value="Update"></input>
+            </form>
+        `
+
+        divUpdateBody.innerHTML = text
     }
     else {
         alert("Nothing found")
@@ -192,10 +220,36 @@ async function getDataInfo() {
 }
 
 
+async function setDataSubmit() {
+    let text = `
+            <form class="form-submit" action="/Project1/reimbursement" method="POST">
+                <input type="number" class="form-sumbit-id" name="id" value="${userId}" style="display: none;"></input>
+                <label>Amount:</label><br>
+                
+                <input type="text" class="form-submit-amount" name="amount" value=""></input><br>
+                <label>Description:</label><br>
+                
+                <input type="text" class="form-submit-description" name="description" value=""></input><br>
+                <label>Receipt:</label><br>
+                
+                <input type="text" class="form-submit-receipt" name="receipt" value=""></input><br>
+                <label>Type (Lodging: 1, Travel: 2, Food: 3, Other: 4):</label><br>
+                
+                <input type="number" class="form-submit-type" name="type" value=""></input><br>
+
+                <input type="submit" class="form-update-info-submit" name="submit" value="Submit"></input>
+            </form>
+        `
+     divSubmitBody.innerHTML = text
+}
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Call the functions to populate the page on dom content load
+    // call the functions to populate the page on dom content load
+    setDataSubmit()
     getDataPending()
     getDataResolved()
     getDataInfo()
+    
 })

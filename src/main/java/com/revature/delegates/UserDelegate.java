@@ -57,6 +57,25 @@ public class UserDelegate implements Delegatable {
                 case "PUT":
                     // logic to update a user
                     break;
+				case "POST":
+					// logic to update a user
+					String username = request.getParameter("username");
+					String password = request.getParameter("password");
+					String firstname = request.getParameter("firstname");
+					String lastname = request.getParameter("lastname");
+					String email = request.getParameter("email");
+					// Integer role = Integer.parseInt(request.getParameter("role"));
+					
+					// you can just pass in a 1 here into the constructor to indicate that it is an employee ...
+					// ... as the manager does not have an update info section
+					User new_u = new User(userId, username, password, firstname, lastname, email, 1);
+					
+					up.update(new_u);
+					
+//					request.getRequestDispatcher("/static/view/employee.html").forward(request, response);
+					response.sendRedirect("/Project1/employee");
+                    
+				break;
                 case "DELETE":
                     //logic to remove a user
                     break;

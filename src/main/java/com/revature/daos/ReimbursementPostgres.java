@@ -76,8 +76,11 @@ public class ReimbursementPostgres implements ReimbursementDao {
 				+ " reimb_submitted,"
 				+ " reimb_resolved,"
 				+ " reimb_description,"
-				+ " reimb_receipt"
-				+ " reimb_author) VALUES (?, ?, ?, ?, ?, ?)";
+				+ " reimb_receipt,"
+				+ " reimb_author,"
+				+ " reimb_resolver,"
+				+ " reimb_status_id,"
+				+ " reimb_type_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		Integer affectedRows = 0;
 		try(Connection conn = DBConnection.getConnectionFromFile()){
@@ -88,6 +91,10 @@ public class ReimbursementPostgres implements ReimbursementDao {
 			ps.setString(4, r.getReimb_description());
 			ps.setString(5, r.getReimb_receipt());
 			ps.setInt(6, id);
+			ps.setNull(7, java.sql.Types.INTEGER);
+			ps.setInt(8, r.getReimb_status_id());
+			ps.setInt(9, r.getReimb_type_id());
+			
 			affectedRows = ps.executeUpdate();
 		} catch (IOException | SQLException e) {
 			e.printStackTrace();
@@ -123,6 +130,44 @@ public class ReimbursementPostgres implements ReimbursementDao {
 			ps.setInt(8, r.getReimb_status_id());
 			ps.setInt(9, r.getReimb_type_id());
 			ps.setInt(10, r.getReimb_id());
+			
+			affectedRows = ps.executeUpdate();
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+		return affectedRows;
+	}
+	
+	@Override
+	public Integer updateId(Reimbursement r) {
+		String sql = "UPDATE ers_reimbursements"
+				+ " SET reimb_id = ?"
+				+ " reimb_amount = ?, "
+				+ " reimb_submitted = ?,"
+				+ " reimb_resolved = ?,"
+				+ " reimb_description = ?,"
+				+ " reimb_receipt = ?,"
+				+ " reimb_author = ?,"
+				+ " reimb_resolver = ?,"
+				+ " reimb_status_id = ?,"
+				+ " reimb_type_id = ?"
+				+ " WHERE reimb_id = ?";
+		
+		Integer affectedRows = 0;
+		
+		try(Connection conn = DBConnection.getConnectionFromFile()){
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, r.getReimb_id());
+			ps.setDouble(2, r.getReimb_amount());
+			ps.setTimestamp(3, r.getReimb_submitted());
+			ps.setTimestamp(4, r.getReimb_resolved());
+			ps.setString(5, r.getReimb_description());
+			ps.setString(6, r.getReimb_receipt());
+			ps.setInt(7, r.getReimb_author());
+			ps.setInt(8, r.getReimb_resolver());
+			ps.setInt(9, r.getReimb_status_id());
+			ps.setInt(10, r.getReimb_type_id());
+			ps.setInt(11, r.getReimb_id());
 			
 			affectedRows = ps.executeUpdate();
 		} catch (IOException | SQLException e) {

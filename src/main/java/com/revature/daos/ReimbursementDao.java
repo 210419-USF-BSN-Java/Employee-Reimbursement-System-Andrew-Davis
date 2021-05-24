@@ -9,5 +9,6 @@ public interface ReimbursementDao {
 	public ArrayList<Reimbursement> getAll();
 	public Integer add(Integer id, Reimbursement r);
 	public Integer update(Reimbursement r);
+	public Integer updateId(Reimbursement r);
 	public Integer delete(Reimbursement r);
 }
