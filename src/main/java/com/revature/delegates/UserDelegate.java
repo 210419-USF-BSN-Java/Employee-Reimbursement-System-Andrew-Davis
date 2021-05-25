@@ -51,7 +51,6 @@ public class UserDelegate implements Delegatable {
             switch (request.getMethod()) {
                 case "GET":
                 	// logic to get a user
-                	
                     u = usi.viewInformation(userId);
                     if (u != null) {
                         response.getWriter().write(om.writeValueAsString(u));
@@ -70,12 +69,13 @@ public class UserDelegate implements Delegatable {
 					String email = request.getParameter("email");
 					Integer role = Integer.parseInt(request.getParameter("role"));
 					
-					u = new User(userId, username, password, firstname, lastname, email, role);
+					// you can just pass in a 1 here into the constructor to indicate that it is an employee ...
+					// ... as the manager does not have an update info section
+					User new_u = new User(userId, username, password, firstname, lastname, email, role);
+					
+					up.update(new_u);
 					
 					
-					usi.updateInformation(u);
-					
-					response.setStatus(201);
 					response.sendRedirect("/Project1/employee");
                     
 				break;

@@ -14,13 +14,12 @@ public class UserServiceImplementation implements UserService {
 
 	// Employee //
 	@Override
-	public void submitReimbursementRequest(Integer id, Reimbursement r) {
+	public Integer submitReimbursementRequest(Integer id, Reimbursement r) {
 		// TODO Auto-generated method stub
-		
-		// GET
-		Reimbursement reimb = rp.getById(r.getReimb_id());
 		// ADD
-		Integer affectedRows = rp.add(id, reimb);
+		Integer affectedRows = rp.add(id, r);
+		
+		return affectedRows;
 	}
 	@Override
 	public void uploadReceipt() {

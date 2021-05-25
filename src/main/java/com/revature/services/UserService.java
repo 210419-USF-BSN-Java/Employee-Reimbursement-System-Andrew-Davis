@@ -8,7 +8,7 @@ import com.revature.models.User;
 public interface UserService {
 
 	// Employee //
-	public void submitReimbursementRequest(Integer id, Reimbursement r);
+	public Integer submitReimbursementRequest(Integer id, Reimbursement r);
 	public void uploadReceipt();
 	
 	public User viewInformation(Integer id);
