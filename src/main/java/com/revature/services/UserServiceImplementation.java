@@ -2,10 +2,15 @@ package com.revature.services;
 
 import java.util.ArrayList;
 
+import com.revature.daos.ReimbursementPostgres;
+import com.revature.daos.UserPostgres;
 import com.revature.models.Reimbursement;
 import com.revature.models.User;
 
 public class UserServiceImplementation implements UserService {
+
+	private UserPostgres up = new UserPostgres();
+	private ReimbursementPostgres rp = new ReimbursementPostgres();
 
 	// Employee //
 	@Override
@@ -19,14 +24,23 @@ public class UserServiceImplementation implements UserService {
 		
 	}
 	@Override
-	public User viewInformation() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public void updateInformation() {
+	public User viewInformation(Integer id) {
 		// TODO Auto-generated method stub
 		
+		User u = up.getById(id);
+		
+		return u;
+	}
+	@Override
+	public Integer updateInformation(Integer id, String username, String password, String firstname, String lastname, String email, Integer role) {
+		// TODO Auto-generated method stub
+		
+		// GET
+		User u = up.getById(id);
+		// UPDATE
+		Integer affectedRows = up.update(u);
+		
+		return affectedRows;
 	}
 
 	
@@ -57,9 +71,12 @@ public class UserServiceImplementation implements UserService {
 	
 	// Employee and Manager //
 	@Override
-	public void login() {
+	public User login(String username, String password) {
 		// TODO Auto-generated method stub
 		
+		User user = up.getByUsernameAndPassword(username, password);
+		
+		return user;
 	}
 	@Override
 	public void logout() {

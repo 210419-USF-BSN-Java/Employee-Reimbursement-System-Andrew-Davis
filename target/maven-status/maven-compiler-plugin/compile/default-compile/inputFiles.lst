@@ -1,13 +1,10 @@
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\controllers\FrontController.java
-C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\services\EmployeeService.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\models\Role.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\delegates\Delegatable.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\daos\UserDao.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\utils\DBConnection.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\daos\RoleDao.java
-C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\services\EmployeeServiceImplementation.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\daos\ReimbursementDao.java
-C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\services\ManagerService.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\delegates\UserDelegate.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\models\Type.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\delegates\ReimbsDelegate.java
@@ -15,6 +12,7 @@ C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\s
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\delegates\EmployeesDelegate.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\delegates\EmployeeDelegate.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\delegates\ReimbDelegate.java
+C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\services\UserServiceImplementation.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\delegates\ManagerDelegate.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\models\User.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\daos\TypeDao.java
@@ -23,8 +21,8 @@ C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\s
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\daos\StatusPostgres.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\models\Status.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\daos\StatusDao.java
+C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\services\UserService.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\models\Reimbursement.java
-C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\services\ManagerServiceImplementation.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\daos\ReimbursementPostgres.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\controllers\RequestHelper.java
 C:\Users\davis\Documents\workspace-spring-tool-suite-4-4.10.0.RELEASE\project1\src\main\java\com\revature\daos\TypePostgres.java

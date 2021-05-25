@@ -9,10 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.revature.daos.UserPostgres;
 import com.revature.models.User;
+import com.revature.services.UserServiceImplementation;
 
 public class LoginDelegate implements Delegatable {
 	
+	private UserServiceImplementation usi = new UserServiceImplementation();
 	private UserPostgres up = new UserPostgres();
+
 
 	@Override
 	public void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -38,7 +41,7 @@ public class LoginDelegate implements Delegatable {
 					String username = request.getParameter("username");
                     String password = request.getParameter("password");
 
-                    User user = up.getByUsernameAndPassword(username, password);
+                    User user = usi.login(username, password);
 
 					// Employees have even user_ids
 					// Managers have odd user_ids

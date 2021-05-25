@@ -11,8 +11,8 @@ public interface UserService {
 	public void submitReimbursementRequest(Integer i, Reimbursement r);
 	public void uploadReceipt();
 	
-	public User viewInformation();
-	public void updateInformation();
+	public User viewInformation(Integer id);
+	public Integer updateInformation(Integer id, String username, String password, String firstname, String lastname, String email, Integer role);
 	
 	// Manager //
 	public void settleRequest();
@@ -21,7 +21,7 @@ public interface UserService {
 	public ArrayList<Reimbursement> viewEmployeeRequests();
 	
 	// Employee and Manager //
-	public void login();
+	public User login(String username, String password);
 	public void logout();
 	public ArrayList<Reimbursement> viewPendingRequests();
 	public ArrayList<Reimbursement> viewResolvedRequests();

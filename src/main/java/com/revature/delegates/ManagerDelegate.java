@@ -7,12 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.services.ManagerServiceImplementation;
 
 public class ManagerDelegate implements Delegatable {
 	private ObjectMapper om = new ObjectMapper();
-	
-	private ManagerServiceImplementation ms = new ManagerServiceImplementation();
 	
 	@Override
 	public void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
