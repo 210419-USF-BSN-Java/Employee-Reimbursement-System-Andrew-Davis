@@ -14,9 +14,13 @@ public class UserServiceImplementation implements UserService {
 
 	// Employee //
 	@Override
-	public void submitReimbursementRequest(Integer i, Reimbursement r) {
+	public void submitReimbursementRequest(Integer id, Reimbursement r) {
 		// TODO Auto-generated method stub
 		
+		// GET
+		Reimbursement reimb = rp.getById(r.getReimb_id());
+		// ADD
+		Integer affectedRows = rp.add(id, reimb);
 	}
 	@Override
 	public void uploadReceipt() {
@@ -32,13 +36,13 @@ public class UserServiceImplementation implements UserService {
 		return u;
 	}
 	@Override
-	public Integer updateInformation(Integer id, String username, String password, String firstname, String lastname, String email, Integer role) {
+	public Integer updateInformation(User u) {
 		// TODO Auto-generated method stub
 		
 		// GET
-		User u = up.getById(id);
+		User user = up.getById(u.getErs_user_id());
 		// UPDATE
-		Integer affectedRows = up.update(u);
+		Integer affectedRows = up.update(user);
 		
 		return affectedRows;
 	}

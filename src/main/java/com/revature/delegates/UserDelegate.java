@@ -70,8 +70,12 @@ public class UserDelegate implements Delegatable {
 					String email = request.getParameter("email");
 					Integer role = Integer.parseInt(request.getParameter("role"));
 					
-					usi.updateInformation(role, username, password, firstname, lastname, email, role);
+					u = new User(userId, username, password, firstname, lastname, email, role);
 					
+					
+					usi.updateInformation(u);
+					
+					response.setStatus(201);
 					response.sendRedirect("/Project1/employee");
                     
 				break;

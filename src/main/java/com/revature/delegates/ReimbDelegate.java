@@ -19,11 +19,13 @@ import com.revature.daos.RolePostgres;
 import com.revature.models.Reimbursement;
 import com.revature.models.Role;
 import com.revature.models.User;
+import com.revature.services.UserServiceImplementation;
 
 public class ReimbDelegate implements Delegatable {
 	private ObjectMapper om = new ObjectMapper();
 
 	private ReimbursementPostgres rp = new ReimbursementPostgres();
+	private UserServiceImplementation usi = new UserServiceImplementation();
 	
 	@Override
 	public void process(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -54,7 +56,7 @@ public class ReimbDelegate implements Delegatable {
 					
 					break;
 				case "POST":
-					// logic
+					// logic to create and new reimbursement request
 					Integer user_id = Integer.parseInt(request.getParameter("id"));
 					Double amount = Double.parseDouble(request.getParameter("amount"));
 					Timestamp submitted = new Timestamp(System.currentTimeMillis());
@@ -72,19 +74,9 @@ public class ReimbDelegate implements Delegatable {
 					// 1 : Pending
 					Reimbursement r = new Reimbursement(amount, submitted, resolved, description, receipt, author, null, 1, type);
 					
-					rp.add(user_id, r);
+					usi.submitReimbursementRequest(user_id, r);
 					
-//					request.getRequestDispatcher("/Projec1/employee").forward(request, response);
-					
-					
-					// Instead of adding a reimbursement which has a ton of fields i just called add on role because it is simpler...
-					// .. for this test
-					// String role = request.getParameter("user_role");
-					// Role r = new Role(role);
-					// rop.add(r);
-					
-//					response.setStatus(201);
-					
+					response.setStatus(201);
 					response.sendRedirect("/Project1/employee");
 					
 					break;
