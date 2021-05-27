@@ -202,13 +202,15 @@ async function getOneEmployee() {
             <div class='div-buffer-card-centered'>
                 <label>User ID </label><br>
                 <input type="text" class="emp-userId"></input><br><br>
-                <input class="btn-get-one" type="button" class="emp-search" value="Search"></input>
+                <input class="btn-get-one" type="button" value="Search"></input>
             </div>
         </div>
+        <br>
+        <br>
     `
     divOneSearchBar.innerHTML = text
 
-    var searchBtn = document.querySelector(".emp-search")
+    var searchBtn = document.querySelector(".btn-get-one")
     searchBtn.addEventListener("click", async () => {
         let userId = document.querySelector(".emp-userId").value
         
@@ -227,7 +229,7 @@ async function getOneEmployee() {
             let text = ``
             for(let i = 0; i < specificUserReimbs.length; i++) {
                 text += `<div class='div-card-resolved-${i}'>`
-                    text += `<div class='div-buffer-card-left'></div>`
+                    text += `<div class='div-buffer-card-left'>`
                         text += "<label>Amount: $</label>" + specificUserReimbs[i].reimb_amount
                         text += "<br>"
                         
