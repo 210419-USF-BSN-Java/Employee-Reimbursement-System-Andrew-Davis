@@ -233,54 +233,54 @@ body {
     width: 8em;
     height: 2.5em;
 
-    background-color: #ff8b51;
+    background-color: #ffb38d;
     border: 2px solid #929292;
 
     transition: var(--mainTransition);
 }
 .form-submit-reimb:hover {
-    background-color: #ff7936;
-    color: #ffffff;
+    background-color: #ff8b51;
+    /* color: #ffffff; */
 }
 
 .form-update-info-submit {
     width: 8em;
     height: 2.5em;
 
-    background-color: #ff8b51;
+    background-color: #ffb38d;
     border: 2px solid #929292;
 
     transition: var(--mainTransition);
 }
 .form-update-info-submit:hover {
-    background-color: #ff7936;
-    color: #ffffff;
+    background-color: #ff8b51;
+    /* color: #ffffff; */
 }
 
 .btn-approve-deny {
     width: 8em;
     height: 2.5em;
 
-    background-color: #ff8b51;
+    background-color: #ffb38d;
     border: 2px solid #929292;
 
     transition: var(--mainTransition);
 }
 .btn-approve-deny:hover {
-    background-color: #ff7936;
-    color: #ffffff;
+    background-color: #ff8b51;
+    /* color: #ffffff; */
 }
 
 .btn-get-one {
     width: 8em;
     height: 2.5em;
 
-    background-color: #ff8b51;
+    background-color: #ffb38d;
     border: 2px solid #929292;
 
     transition: var(--mainTransition);
 }
 .btn-get-one:hover {
-    background-color: #ff7936;
-    color: #ffffff;
+    background-color: #ff8b51;
+    /* color: #ffffff; */
 }
