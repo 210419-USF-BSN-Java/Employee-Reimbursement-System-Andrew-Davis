@@ -53,7 +53,7 @@ divViewOneEmplOptions.addEventListener("click", ()=>{
     divViewOneEmpl.style.zIndex = "2"
     divViewAllEmpl.style.zIndex = "1"
 
-    pTitle.innerHTML = "Employee"
+    pTitle.innerHTML = "One Employee"
 })
 divViewAllEmplOptions.addEventListener("click", ()=>{
     divFront.style.zIndex = "1"
@@ -62,7 +62,7 @@ divViewAllEmplOptions.addEventListener("click", ()=>{
     divViewOneEmpl.style.zIndex = "1"
     divViewAllEmpl.style.zIndex = "2"
 
-    pTitle.innerHTML = "Employees"
+    pTitle.innerHTML = "All Employees"
 })
 
 

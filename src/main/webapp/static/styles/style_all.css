@@ -239,7 +239,7 @@ body {
     transition: var(--mainTransition);
 }
 .form-submit-reimb:hover {
-    background-color: #ff6b21;
+    background-color: #ff7936;
     color: #ffffff;
 }
 
@@ -253,7 +253,7 @@ body {
     transition: var(--mainTransition);
 }
 .form-update-info-submit:hover {
-    background-color: #ff6b21;
+    background-color: #ff7936;
     color: #ffffff;
 }
 
@@ -267,7 +267,7 @@ body {
     transition: var(--mainTransition);
 }
 .btn-approve-deny:hover {
-    background-color: #ff6b21;
+    background-color: #ff7936;
     color: #ffffff;
 }
 
@@ -281,6 +281,6 @@ body {
     transition: var(--mainTransition);
 }
 .btn-get-one:hover {
-    background-color: #ff6b21;
+    background-color: #ff7936;
     color: #ffffff;
 }

@@ -88,7 +88,7 @@ divViewInfoOptions.addEventListener("click", ()=>{
     divViewInfo.style.zIndex = "2"
     divUpdateInfo.style.zIndex = "1"
 
-    pTitle.innerHTML = "View Info"
+    pTitle.innerHTML = "View"
 })
 divUpdateInfoOptions.addEventListener("click", ()=>{
     divFront.style.zIndex = "1"
@@ -99,7 +99,7 @@ divUpdateInfoOptions.addEventListener("click", ()=>{
     divViewInfo.style.zIndex = "1"
     divUpdateInfo.style.zIndex = "2"
 
-    pTitle.innerHTML = "Update Info"
+    pTitle.innerHTML = "Update"
 })
 
 

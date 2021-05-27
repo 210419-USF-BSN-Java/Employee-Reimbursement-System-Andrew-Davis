@@ -32,7 +32,7 @@ async function setDataSubmit() {
                         <input type="text" class="form-submit-receipt" name="receipt" value=""></input><br><br>
                         
                         <label>Type<br>(Lodging: 1, Travel: 2, Food: 3, Other: 4)</label><br>
-                        <input type="number" class="form-submit-type" name="type" value=""></input><br><br>
+                        <input type="number" min=1 max=4 maxclass="form-submit-type" name="type" value=""></input><br><br>
 
                         <input class="form-submit-reimb" type="submit"  name="submit" value="Submit"></input>
                     </form>
