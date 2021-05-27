@@ -39,7 +39,7 @@ public class RequestHelper {
 			request.setAttribute("path", uriString.substring(uriString.indexOf("/") + 1));
 			
 			uriString.replace(uriString.indexOf("/"), uriString.length(), "");
-			// at this point, uriString = planets
+			// at this point, uriString = reimbursement
 		}
 		
 		

@@ -34,79 +34,80 @@ async function getDataPending() {
 
         for(var i = 0; i < pendingData.length; i++) {
             pendingText += `<div class='div-card-pending-${i}'>`
-                pendingText += "Amount: $" + pendingData[i].reimb_amount
-                pendingText += "<br>"
-                
-                pendingText += "Submitted: " + pendingData[i].reimb_submitted
-                pendingText += "<br>"
-                
-                pendingText += "Resolved: " + pendingData[i].reimb_resolved
-                pendingText += "<br>"
-                
-                pendingText += "Description: " + pendingData[i].reimb_description
-                pendingText += "<br>"
-                
-                pendingText += "Receipt: " + pendingData[i].reimb_receipt
-                pendingText += "<br>"
-                
-                pendingText += "Author: " + pendingData[i].reimb_author
-                pendingText += "<br>"
-                
-                pendingText += "Resolver: " + pendingData[i].reimb_resolver
-                pendingText += "<br>"
-                
-                pendingText += "Status: "
-                if(pendingData[i].reimb_status_id == 1) {
-                    pendingText += "Pending"
-                }
-                else if(pendingData[i].reimb_status_id == 2) {
-                    pendingText = "Accepted"
-                }
-                else {
-                    pendingText = "Rejected"
-                }
-                pendingText += "<br>"
+                pendingText += "<div class='div-buffer-card-left'>"
+                    pendingText += "<label>Amount: $</label>" + pendingData[i].reimb_amount
+                    pendingText += "<br>"
+                    
+                    pendingText += "<label>Submitted:</label> " + pendingData[i].reimb_submitted
+                    pendingText += "<br>"
+                    
+                    pendingText += "<label>Resolved:</label> " + pendingData[i].reimb_resolved
+                    pendingText += "<br>"
+                    
+                    pendingText += "<label>Description:</label> " + pendingData[i].reimb_description
+                    pendingText += "<br>"
+                    
+                    pendingText += "<label>Receipt:</label> " + pendingData[i].reimb_receipt
+                    pendingText += "<br>"
+                    
+                    pendingText += "<label>Author:</label> " + pendingData[i].reimb_author
+                    pendingText += "<br>"
+                    
+                    pendingText += "<label>Resolver:</label> " + pendingData[i].reimb_resolver
+                    pendingText += "<br>"
+                    
+                    pendingText += "<label>Status:</label> "
+                    if(pendingData[i].reimb_status_id == 1) {
+                        pendingText += "Pending"
+                    }
+                    else if(pendingData[i].reimb_status_id == 2) {
+                        pendingText = "Accepted"
+                    }
+                    else {
+                        pendingText = "Rejected"
+                    }
+                    pendingText += "<br>"
 
-                pendingText += `Type: `
-                if(pendingData[i].reimb_type_id == 1){
-                    pendingText += "Lodging"
-                }
-                else if (pendingData[i].reimb_type_id == 2) {
-                    pendingText += "Travel"
-                }
-                else if (pendingData[i].reimb_type_id == 3) {
-                    pendingText += "Food"
-                }
-                else {
-                    pendingText += "Other"
-                }
+                    pendingText += `<label>Type:</label> `
+                    if(pendingData[i].reimb_type_id == 1){
+                        pendingText += "Lodging"
+                    }
+                    else if (pendingData[i].reimb_type_id == 2) {
+                        pendingText += "Travel"
+                    }
+                    else if (pendingData[i].reimb_type_id == 3) {
+                        pendingText += "Food"
+                    }
+                    else {
+                        pendingText += "Other"
+                    }
 
-                pendingText += `<br><br>`
-                // APPROVE or...
-                pendingText += `
-                    <form action="/Project1/reimbursements" method="POST">
-                        <input type="text" name="id" value='${pendingData[i].reimb_id}' style="display: none;">
-                        <input type="text" name="choice" value="2" style="display: none;">
-                        <input type="text name="resolver" value="${userId}" style="display: none;">
-                        
-                        <input type="submit" name="accept" value="Approve"></input>
-                    </form>
-                `
-
-
-                pendingText += `<br><br>`
-                // ... DENY
-                pendingText += `
-                    <form action="/Project1/reimbursements" method="POST">
-                        <input type="text" name="id" value="${pendingData[i].reimb_id}" style="display: none;">
-                        <input type="text" name="choice" value="3" style="display: none;">
-                        <input type="text name="resolver" value="${userId}" style="display: none;">
-                        
-                        <input type="submit" name="deny" value="Deny"></input>
-                    </form>
-                `
+                    pendingText += `<br><br>`
+                    // APPROVE or...
+                    pendingText += `
+                        <form action="/Project1/reimbursements" method="POST">
+                            <input type="text" name="id" value='${pendingData[i].reimb_id}' style="display: none;">
+                            <input type="text" name="choice" value="2" style="display: none;">
+                            <input type="text name="resolver" value="${userId}" style="display: none;">
+                            
+                            <input type="submit" name="accept" value="Approve"></input>
+                        </form>
+                    `
 
 
+                    pendingText += `<br><br>`
+                    // ... DENY
+                    pendingText += `
+                        <form action="/Project1/reimbursements" method="POST">
+                            <input type="text" name="id" value="${pendingData[i].reimb_id}" style="display: none;">
+                            <input type="text" name="choice" value="3" style="display: none;">
+                            <input type="text name="resolver" value="${userId}" style="display: none;">
+                            
+                            <input type="submit" name="deny" value="Deny"></input>
+                        </form>
+                    `
+
+                pendingText += "</div>"
             pendingText += "</div>"
         }
         
@@ -138,57 +139,147 @@ async function getDataResolved() {
 
         for(var i = 0; i < resolvedData.length; i++) {
             resolvedText += `<div class='div-card-resolved-${i}'>`
-                resolvedText += "Amount: $" + resolvedData[i].reimb_amount
-                resolvedText += "<br>"
-                
-                resolvedText += "Submitted: " + resolvedData[i].reimb_submitted
-                resolvedText += "<br>"
-                
-                resolvedText += "Resolved: " + resolvedData[i].reimb_resolved
-                resolvedText += "<br>"
-                
-                resolvedText += "Description: " + resolvedData[i].reimb_description
-                resolvedText += "<br>"
-                
-                resolvedText += "Receipt: " + resolvedData[i].reimb_receipt
-                resolvedText += "<br>"
-                
-                resolvedText += "Author: " + resolvedData[i].reimb_author
-                resolvedText += "<br>"
-                
-                resolvedText += "Resolver: " + resolvedData[i].reimb_resolver
-                resolvedText += "<br>"
-                
-                resolvedText += "Status: "
-                if(resolvedData[i].reimb_status_id == 1) {
-                    resolvedText += "Pending"
-                }
-                else if(resolvedData[i].reimb_status_id == 2) {
-                    resolvedText += "Accepted"
-                }
-                else {
-                    resolvedText += "Rejected"
-                }
-                resolvedText += "<br>"
+                resolvedText += "<div class='div-buffer-card-left'>"
+                    resolvedText += "<label>Amount: $</label>" + resolvedData[i].reimb_amount
+                    resolvedText += "<br>"
+                    
+                    resolvedText += "<label>Submitted:</label> " + resolvedData[i].reimb_submitted
+                    resolvedText += "<br>"
+                    
+                    resolvedText += "<label>Resolved:</label> " + resolvedData[i].reimb_resolved
+                    resolvedText += "<br>"
+                    
+                    resolvedText += "<label>Description:</label> " + resolvedData[i].reimb_description
+                    resolvedText += "<br>"
+                    
+                    resolvedText += "<label>Receipt:</label> " + resolvedData[i].reimb_receipt
+                    resolvedText += "<br>"
+                    
+                    resolvedText += "<label>Author:</label> " + resolvedData[i].reimb_author
+                    resolvedText += "<br>"
+                    
+                    resolvedText += "<label>Resolver:</label> " + resolvedData[i].reimb_resolver
+                    resolvedText += "<br>"
+                    
+                    resolvedText += "<label>Status:</label> "
+                    if(resolvedData[i].reimb_status_id == 1) {
+                        resolvedText += "Pending"
+                    }
+                    else if(resolvedData[i].reimb_status_id == 2) {
+                        resolvedText += "Accepted"
+                    }
+                    else {
+                        resolvedText += "Rejected"
+                    }
+                    resolvedText += "<br>"
 
-                resolvedText += `Type: `
-                if(resolvedData[i].reimb_type_id == 1){
-                    resolvedText += "Lodging"
-                }
-                else if (resolvedData[i].reimb_type_id == 2) {
-                    resolvedText += "Travel"
-                }
-                else if (resolvedData[i].reimb_type_id == 3) {
-                    resolvedText += "Food"
-                }
-                else {
-                    resolvedText += "Other"
-                }
+                    resolvedText += `<label>Type:</label> `
+                    if(resolvedData[i].reimb_type_id == 1){
+                        resolvedText += "Lodging"
+                    }
+                    else if (resolvedData[i].reimb_type_id == 2) {
+                        resolvedText += "Travel"
+                    }
+                    else if (resolvedData[i].reimb_type_id == 3) {
+                        resolvedText += "Food"
+                    }
+                    else {
+                        resolvedText += "Other"
+                    }
+                resolvedText += `</div>`
             resolvedText += `</div>`
         }
         
         divResolvedBody.innerHTML = resolvedText
     }
+}
+
+
+
+async function getOneEmployee() {
+    let text =  `
+        <div class="div-card-emp">
+            <div class='div-buffer-card-centered'>
+                <label>User ID </label><br>
+                <input type="text" class="emp-userId"></input><br><br>
+                <input type="button" class="emp-search" value="Search"></input>
+            </div>
+        </div>
+    `
+    divOneSearchBar.innerHTML = text
+
+    var searchBtn = document.querySelector(".emp-search")
+    searchBtn.addEventListener("click", async () => {
+        let userId = document.querySelector(".emp-userId").value
+        
+        let response = await fetch(apiURLreimbursement);
+        if(response.status >= 200 && response.status < 300){
+            let data = await response.json();
+            let specificUserReimbs = []
+    
+            // filter the list/array so that only RESOLVED reimbersements are left
+            for(var i = 0; i < data.length; i++) {
+                if(data[i].reimb_author == userId && data[i].reimb_status_id != 1){
+                    specificUserReimbs.push(data[i])
+                }
+            }
+
+            let text = ``
+            for(let i = 0; i < specificUserReimbs.length; i++) {
+                text += `<div class='div-card-resolved-${i}'>`
+                    text += `<div class='div-buffer-card-left'></div>`
+                        text += "<label>Amount: $</label>" + specificUserReimbs[i].reimb_amount
+                        text += "<br>"
+                        
+                        text += "<label>Submitted:</label> " + specificUserReimbs[i].reimb_submitted
+                        text += "<br>"
+                        
+                        text += "<label>Resolved:</label> " + specificUserReimbs[i].reimb_resolved
+                        text += "<br>"
+                        
+                        text += "<label>Description:</label> " + specificUserReimbs[i].reimb_description
+                        text += "<br>"
+                        
+                        text += "<label>Receipt:</label> " + specificUserReimbs[i].reimb_receipt
+                        text += "<br>"
+                        
+                        text += "<label>Author:</label> " + specificUserReimbs[i].reimb_author
+                        text += "<br>"
+                        
+                        text += "<label>Resolver:</label> " + specificUserReimbs[i].reimb_resolver
+                        text += "<br>"
+                        
+                        text += "<label>Status:</label> "
+                        if(specificUserReimbs[i].reimb_status_id == 1) {
+                            text += "Pending"
+                        }
+                        else if(specificUserReimbs[i].reimb_status_id == 2) {
+                            text += "Accepted"
+                        }
+                        else {
+                            text += "Rejected"
+                        }
+                        text += "<br>"
+
+                        text += `<label>Type:</label> `
+                        if(specificUserReimbs[i].reimb_type_id == 1){
+                            text += "Lodging"
+                        }
+                        else if (specificUserReimbs[i].reimb_type_id == 2) {
+                            text += "Travel"
+                        }
+                        else if (specificUserReimbs[i].reimb_type_id == 3) {
+                            text += "Food"
+                        }
+                        else {
+                            text += "Other"
+                        }
+                    text += `</div>`
+                text += `</div>`
+            }
+            divOneResults.innerHTML = text
+        }
+    })
 }
 
 
@@ -214,11 +305,13 @@ async function getDataAllEmployees() {
 
         for(var i = 0; i < emps.length; i++) {
             text += `<div class='div-card-employee-${i}'>`
-                text += `User Id: ${emps[i].ers_user_id} <br>`
-                text += `Username: ${emps[i].ers_username} <br>`
-                text += `First Name: ${emps[i].user_first_name} <br>`
-                text += `Last Name: ${emps[i].user_last_name} <br>`
-                text += `Email: ${emps[i].user_email} <br>`
+                text += `<div class='div-buffer-card-centered'>`
+                    text += `<label>User Id:</label> ${emps[i].ers_user_id} <br>`
+                    text += `<label>Username:</label> ${emps[i].ers_username} <br>`
+                    text += `<label>First Name:</label> ${emps[i].user_first_name} <br>`
+                    text += `<label>Last Name:</label> ${emps[i].user_last_name} <br>`
+                    text += `<label>Email:</label> ${emps[i].user_email} <br>`
+                text += `</div>`
             text += `</div>`
         }
     
@@ -226,87 +319,8 @@ async function getDataAllEmployees() {
     }
 }
 
-async function getOneEmployee() {
-    let text =  `
-        <div class="div-card-emp">
-            <label>User ID </label><br>
-            <input type="text" class="emp-userId"></input><br><br>
-            <input type="button" class="emp-search" value="Search"></input>
-        </div>
-    `
-    divOneSearchBar.innerHTML = text
 
-    var searchBtn = document.querySelector(".emp-search")
-    searchBtn.addEventListener("click", async () => {
-        let userId = document.querySelector(".emp-userId").value
-        
-        let response = await fetch(apiURLreimbursement);
-        if(response.status >= 200 && response.status < 300){
-            let data = await response.json();
-            let specificUserReimbs = []
-    
-            // filter the list/array so that only RESOLVED reimbersements are left
-            for(var i = 0; i < data.length; i++) {
-                if(data[i].reimb_author == userId && data[i].reimb_status_id != 1){
-                    specificUserReimbs.push(data[i])
-                }
-            }
 
-            let text = ``
-            for(let i = 0; i < specificUserReimbs.length; i++) {
-                text += `<div class='div-card-resolved-${i}'>`
-                    text += "Amount: $" + specificUserReimbs[i].reimb_amount
-                    text += "<br>"
-                    
-                    text += "Submitted: " + specificUserReimbs[i].reimb_submitted
-                    text += "<br>"
-                    
-                    text += "Resolved: " + specificUserReimbs[i].reimb_resolved
-                    text += "<br>"
-                    
-                    text += "Description: " + specificUserReimbs[i].reimb_description
-                    text += "<br>"
-                    
-                    text += "Receipt: " + specificUserReimbs[i].reimb_receipt
-                    text += "<br>"
-                    
-                    text += "Author: " + specificUserReimbs[i].reimb_author
-                    text += "<br>"
-                    
-                    text += "Resolver: " + specificUserReimbs[i].reimb_resolver
-                    text += "<br>"
-                    
-                    text += "Status: "
-                    if(specificUserReimbs[i].reimb_status_id == 1) {
-                        text += "Pending"
-                    }
-                    else if(specificUserReimbs[i].reimb_status_id == 2) {
-                        text += "Accepted"
-                    }
-                    else {
-                        text += "Rejected"
-                    }
-                    text += "<br>"
-
-                    text += `Type: `
-                    if(specificUserReimbs[i].reimb_type_id == 1){
-                        text += "Lodging"
-                    }
-                    else if (specificUserReimbs[i].reimb_type_id == 2) {
-                        text += "Travel"
-                    }
-                    else if (specificUserReimbs[i].reimb_type_id == 3) {
-                        text += "Food"
-                    }
-                    else {
-                        text += "Other"
-                    }
-                    text += `</div>`
-            }
-            divOneResults.innerHTML = text
-        }
-    })
-}
 
 
 document.addEventListener("DOMContentLoaded", () => {

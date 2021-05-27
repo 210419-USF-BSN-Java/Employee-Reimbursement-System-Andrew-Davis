@@ -169,6 +169,8 @@ body {
 
 [class^="div-card-"] {
     background-color: #ffffff;
+    font-family: "futura-pt", arial;
+    font-size: 14px;
 
     border: 2px solid #929292;
 
@@ -176,4 +178,35 @@ body {
     padding: 1em;
 
     text-align: center;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1f;
+}
+.div-buffer-card-left {
+    grid-row: 1;
+    grid-column: 1;
+
+    justify-self: center;
+    text-align: left;
+
+    width: 30em;
+
+    padding-left: 3em;
+    padding-right: 3em;
+}
+.div-buffer-card-centered {
+    grid-row: 1;
+    grid-column: 1;
+
+    justify-self: center;
+
+    width: 30em;
+
+    padding-left: 3em;
+    padding-right: 3em;
+}
+[class^="div-card-"] label {
+    font-weight: bold;
+    color: #2e2e2e!important;
 }
