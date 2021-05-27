@@ -84,28 +84,28 @@ async function getDataPending() {
 
                     pendingText += `<br><br>`
                     // APPROVE or...
+                    pendingText += "<div class='div-approve-deny'>"
                     pendingText += `
-                        <form action="/Project1/reimbursements" method="POST">
+                        <form class='form-approve' action="/Project1/reimbursements" method="POST">
                             <input type="text" name="id" value='${pendingData[i].reimb_id}' style="display: none;">
                             <input type="text" name="choice" value="2" style="display: none;">
                             <input type="text name="resolver" value="${userId}" style="display: none;">
                             
-                            <input type="submit" name="accept" value="Approve"></input>
+                            <input class="btn-approve-deny" type="submit" name="accept" value="Approve"></input>
                         </form>
                     `
 
-
-                    pendingText += `<br><br>`
                     // ... DENY
                     pendingText += `
-                        <form action="/Project1/reimbursements" method="POST">
+                        <form class='form-deny' action="/Project1/reimbursements" method="POST">
                             <input type="text" name="id" value="${pendingData[i].reimb_id}" style="display: none;">
                             <input type="text" name="choice" value="3" style="display: none;">
                             <input type="text name="resolver" value="${userId}" style="display: none;">
                             
-                            <input type="submit" name="deny" value="Deny"></input>
+                            <input class="btn-approve-deny" type="submit" name="deny" value="Deny"></input>
                         </form>
                     `
+                    pendingText += "</div>"
 
                 pendingText += "</div>"
             pendingText += "</div>"
@@ -202,7 +202,7 @@ async function getOneEmployee() {
             <div class='div-buffer-card-centered'>
                 <label>User ID </label><br>
                 <input type="text" class="emp-userId"></input><br><br>
-                <input type="button" class="emp-search" value="Search"></input>
+                <input class="btn-get-one" type="button" class="emp-search" value="Search"></input>
             </div>
         </div>
     `

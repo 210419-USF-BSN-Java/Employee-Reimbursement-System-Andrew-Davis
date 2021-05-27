@@ -34,7 +34,7 @@ async function setDataSubmit() {
                         <label>Type<br>(Lodging: 1, Travel: 2, Food: 3, Other: 4)</label><br>
                         <input type="number" class="form-submit-type" name="type" value=""></input><br><br>
 
-                        <input type="submit" class="form-update-info-submit" name="submit" value="Submit"></input>
+                        <input class="form-submit-reimb" type="submit"  name="submit" value="Submit"></input>
                     </form>
                 </div>
             </div>
