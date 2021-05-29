@@ -56,6 +56,6 @@
   </dependencies>
 
   <build>
-    <finalName>Project1</finalName>    
+    <finalName>ers</finalName>    
   </build>
 </project>

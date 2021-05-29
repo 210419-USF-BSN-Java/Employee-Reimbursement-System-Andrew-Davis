@@ -1,0 +1,25 @@
+.div-one-results {
+    margin-top: 4em;
+}
+
+.div-one-search-bar {
+    height: 100px;
+    width: 100%;
+}
+.div-approve-deny {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+.form-approve {
+    grid-row: 1;
+    grid-column: 1;
+
+    text-align: center;
+}
+.form-deny {
+    grid-row: 1;
+    grid-column: 2;
+
+    text-align: center;
+}
