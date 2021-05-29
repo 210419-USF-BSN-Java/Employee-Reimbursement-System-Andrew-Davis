@@ -65,7 +65,7 @@
 
 
 ## Notes and ToDo
-### There is an upload receipt functionality that hasn't been implemented, which was considered a stretch goal.
-### There is currently an issue with accepting and denying requests
-### Sessions need to be implemented
-### Input validations need to be implemented
+- There is an upload receipt functionality that hasn't been implemented, which was considered a stretch goal.
+- There is currently an issue with accepting and denying requests
+- Sessions need to be implemented
+- Input validations need to be implemented
