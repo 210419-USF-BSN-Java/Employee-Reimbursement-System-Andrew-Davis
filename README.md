@@ -9,7 +9,27 @@
 
 
 
-## User Stories
+## Getting Started
+### After cloning the repository onto your machine, ensure that you have the following installed
+- Apache Tomcat
+- Maven
+- Visual Studio Code + Apache Tomcat Extension
+### Navigate to the src/java/resources directory to find the SQL that is needed to construct the schema and populate it with dummy data
+### In the same directory you will need to provide a connection.properties file with the following values for your connection
+- url=url-to-the-database
+- username=username-for-the-database
+- password=password-for-the-database
+### Run the command within the project root directory to build the project and generate the WAR file
+- mvn clean package
+### Within Visual Studio Code, right click the WAR file that was generated in the /target directory and select
+- Run On Tomcat Server
+### If you use the default port for Apache Tomcat, which is port 8080 navigate to
+- http://localhost:8080/ERS/
+### Use the dummy data that exists in the SQL file to login and use the application
+
+
+
+## Features
 ### Employee User Stories 
 - An Employee can login
 - An Employee can view the Employee Homepage
@@ -38,10 +58,14 @@
 - Apache Maven, Build Automation Tool and Package Manager
 - Apache Tomcat + Java Servlets, Server Environment
 - Java Database Connectivity, Database Interactivity API
-- AWS RDS, Cloud Database
+- PostgreSQL, Relational Database Management System
+- AWS RDS, Cloud Based Distributed Relational Database Service
 - JUnit, Unit Testing Framework
 - Log4j, Logging Utility
 
 
-## Notes
+## Notes and ToDo
 ### There is an upload receipt functionality that hasn't been implemented, which was considered a stretch goal.
+### There is currently an issue with accepting and denying requests
+### Sessions need to be implemented
+### Input validations need to be implemented
