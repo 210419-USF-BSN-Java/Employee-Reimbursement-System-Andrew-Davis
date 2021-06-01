@@ -5,7 +5,7 @@ function requestLogin() {
 	let pass = document.querySelector(".input-password").value;
 	
 	let xhr = new XMLHttpRequest();
-	let url = "http://localhost:8080/Project1/login";
+	let url = "http://localhost:8080/ers/login";
 	xhr.open("POST", url);
 	
 	xhr.onreadystatechange = function(){
@@ -25,10 +25,10 @@ function requestLogin() {
 			tokenArr = sessionVariable.split(":");
 
 			if(tokenArr[1] == "Employee") {
-				window.location.href="http://localhost:8080/Project1/employee"
+				window.location.href="http://localhost:8080/ers/employee"
 			}
 			else if(tokenArr[1] == "Manager") {
-				window.location.href="http://localhost:8080/Project1/manager"
+				window.location.href="http://localhost:8080/ers/manager"
 			}
 		} 
 		else if (xhr.readyState == 4){

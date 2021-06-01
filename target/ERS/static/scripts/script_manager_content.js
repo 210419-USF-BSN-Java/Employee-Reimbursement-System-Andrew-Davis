@@ -14,7 +14,7 @@ var userId = tokenArr[0]
 
 
 
-var apiURLreimbursement = 'http://localhost:8080/Project1/reimbursement';
+var apiURLreimbursement = 'http://localhost:8080/ers/reimbursement';
 
 async function getDataPending() {
     let response = await fetch(apiURLreimbursement);
@@ -86,7 +86,7 @@ async function getDataPending() {
                     // APPROVE or...
                     pendingText += "<div class='div-approve-deny'>"
                     pendingText += `
-                        <form class='form-approve' action="/Project1/reimbursements" method="POST">
+                        <form class='form-approve' action="/ers/reimbursements" method="POST">
                             <input type="text" name="id" value='${pendingData[i].reimb_id}' style="display: none;">
                             <input type="text" name="choice" value="2" style="display: none;">
                             <input type="text name="resolver" value="${userId}" style="display: none;">
@@ -97,7 +97,7 @@ async function getDataPending() {
 
                     // ... DENY
                     pendingText += `
-                        <form class='form-deny' action="/Project1/reimbursements" method="POST">
+                        <form class='form-deny' action="/ers/reimbursements" method="POST">
                             <input type="text" name="id" value="${pendingData[i].reimb_id}" style="display: none;">
                             <input type="text" name="choice" value="3" style="display: none;">
                             <input type="text name="resolver" value="${userId}" style="display: none;">
@@ -286,7 +286,7 @@ async function getOneEmployee() {
 
 
 
-let apiURLemployees = 'http://localhost:8080/Project1/employees';
+let apiURLemployees = 'http://localhost:8080/ers/employees';
 async function getDataAllEmployees() {
     let response = await fetch(apiURLemployees);
 

@@ -108,5 +108,5 @@ divUpdateInfoOptions.addEventListener("click", ()=>{
 divLogout.addEventListener("click", ()=>{
     sessionStorage.removeItem('token');
 
-    window.location.href="http://localhost:8080/Project1/"
+    window.location.href="http://localhost:8080/ers/"
 })

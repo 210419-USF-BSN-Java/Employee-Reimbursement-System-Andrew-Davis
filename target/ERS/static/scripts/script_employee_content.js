@@ -19,7 +19,7 @@ async function setDataSubmit() {
     let text = `
             <div class="div-card-update-info">
                 <div class='div-buffer-card-centered'>
-                    <form class="form-submit" action="/Project1/reimbursement" method="POST">
+                    <form class="form-submit" action="/ers/reimbursement" method="POST">
                         <input type="number" class="form-sumbit-id" name="id" value="${userId}" style="display: none;"></input>
                         
                         <label>Amount</label><br>
@@ -44,7 +44,7 @@ async function setDataSubmit() {
 
 
 
-let apiURLreimbursement = 'http://localhost:8080/Project1/reimbursement';
+let apiURLreimbursement = 'http://localhost:8080/ers/reimbursement';
 async function getDataPending(){
     let response = await fetch(apiURLreimbursement);
 
@@ -205,7 +205,7 @@ async function getDataResolved(){
 
 
 
-var apiURLuser = `http://localhost:8080/Project1/user/${userId}`;
+var apiURLuser = `http://localhost:8080/ers/user/${userId}`;
 async function getDataInfo() {
     let response = await fetch(apiURLuser);
     if(response.status >= 200 && response.status < 300){
@@ -231,7 +231,7 @@ async function getDataInfo() {
         text = `
             <div class="div-card-update-info">
                 <div class='div-buffer-card-centered'>
-                    <form class="form-update-info" action="/Project1/user/${userId}" method="POST">
+                    <form class="form-update-info" action="/ers/user/${userId}" method="POST">
                         <label>Username</label><br>
                         <input type="text" class="form-update-info-username" name="username" value="${data.ers_username}"></input><br><br>
                         

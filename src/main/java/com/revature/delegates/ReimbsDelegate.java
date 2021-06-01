@@ -55,7 +55,7 @@ public class ReimbsDelegate implements Delegatable {
 					
 					rp.update(r);
 					
-					response.sendRedirect("/Project1/manager");
+					response.sendRedirect("/ers/manager");
 					
 					break;
 				case "DELETE":

@@ -76,7 +76,7 @@ public class UserDelegate implements Delegatable {
 					up.update(new_u);
 					
 					
-					response.sendRedirect("/Project1/employee");
+					response.sendRedirect("/ers/employee");
                     
 				break;
                 case "DELETE":

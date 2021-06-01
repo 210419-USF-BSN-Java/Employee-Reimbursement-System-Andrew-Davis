@@ -77,7 +77,7 @@ public class ReimbDelegate implements Delegatable {
 					usi.submitReimbursementRequest(user_id, r);
 					
 					response.setStatus(201);
-					response.sendRedirect("/Project1/employee");
+					response.sendRedirect("/ers/employee");
 					
 					break;
 				case "DELETE":
