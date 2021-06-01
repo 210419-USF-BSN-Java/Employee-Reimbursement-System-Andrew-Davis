@@ -3,7 +3,7 @@
 
 
 ## Overview
-This application allows employees and managers to interact with the Employee Reimbursement System for their company. The system allows employees to submit reimbursement requests from the company for a variety of business related expenses. Employees can also view pending and resolved requests in addition to viewing and changing their personal information. Managers can the approve or deny these requests, of which they can the entirety of, or just one employee's pending requests.
+This application allows employees and managers to interact with the Employee Reimbursement System for their company. The system allows employees to submit reimbursement requests from the company for a variety of business related expenses. Employees can also view pending and resolved requests in addition to viewing and changing their personal information. Managers can the approve or deny these requests, of which they can view all or just one employee's pending requests. The application is hosted on an AWS EC2 instance and can be view at: http://ec2-100-25-36-41.compute-1.amazonaws.com:8085/ers/
 
 
 
